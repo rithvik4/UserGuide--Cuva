@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "./lib/utils";
+import Header from "./components/Header";
 
 // Simple icon set (inline SVG). Add or replace icons as needed.
 const Icons = {
@@ -482,8 +483,8 @@ function Sidebar({ sections, activeId, onSelect }) {
   }
 
   return (
-    <aside className="w-1/5 min-w-[220px] max-w-xs h-screen bg-white border-r border-gray-200 fixed left-0 top-0 flex flex-col">
-      <div className="p-6 pb-2 text-xl font-bold text-gray-900">Cuva AI Docs</div>
+    <aside className="w-1/5 min-w-[220px] max-w-xs h-screen bg-white border-r border-gray-200 fixed left-0 top-16 flex flex-col">
+      <div className="p-6 pb-2 text-xl font-bold text-gray-900">Documentation</div>
       <nav className="flex-1 overflow-y-auto">
         {sections.map((section) => (
           <div key={section.title} className="mb-6">
@@ -524,13 +525,16 @@ function MainContent({ activeId }) {
 export default function CuvaDocsApp() {
   const [activeId, setActiveId] = useState("welcome");
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+
       <Sidebar
         sections={docsSections}
         activeId={activeId}
         onSelect={setActiveId}
       />
-      <main className="ml-[20%] w-[80%] min-h-screen">
+
+      <main className="ml-[20%] w-[80%] min-h-screen pt-16">
         <MainContent activeId={activeId} />
       </main>
     </div>
