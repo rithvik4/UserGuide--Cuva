@@ -5,6 +5,14 @@
 body {
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   background: #f8fafc;
+  color: #0f172a;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* When the `dark` class is placed on the <html> element, apply global dark styles */
+html.dark body {
+  background: #0f172a;
+  color: #f8fafc;
 }
 
 .prose-blue a {

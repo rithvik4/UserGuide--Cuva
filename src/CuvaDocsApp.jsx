@@ -138,7 +138,7 @@ const docsContent = {
         <p>
             From initial setup through to development, this guide has you covered. It's actively maintained and we invite your contributions to make it even better.
         </p>
-        <div className="mt-6 border rounded p-4 bg-gray-50 text-gray-700">
+        <div className="mt-6 border rounded p-4 bg-gray-50 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
           <strong>Placeholder:</strong> Platform overview diagram will be added here.
         </div>
       </>
@@ -168,7 +168,7 @@ const docsContent = {
         <p>
           Build custom agents for data analysis, process automation, knowledge management, and more. Cuva AI adapts to diverse enterprise needs, from customer support to internal operations.
         </p>
-        <div className="mt-6 border rounded p-4 bg-gray-50 text-gray-700">
+        <div className="mt-6 border rounded p-4 bg-gray-50 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
           <strong>Placeholder:</strong> Use case visualizations coming soon.
         </div>
       </>
@@ -200,7 +200,7 @@ const docsContent = {
           <li>Set up triggers, actions, and integrations.</li>
           <li>Test and deploy your agent.</li>
         </ol>
-        <div className="mt-6 border rounded p-4 bg-gray-50 text-gray-700">
+        <div className="mt-6 border rounded p-4 bg-gray-50 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
           <strong>Placeholder:</strong> Agent creation flow diagram will be added here.
         </div>
       </>
@@ -236,7 +236,7 @@ const docsContent = {
         <p>
           Design workflows visually or via configuration. Use branching, loops, and triggers to model real-world business logic.
         </p>
-        <div className="mt-6 border rounded p-4 bg-gray-50 text-gray-700">
+        <div className="mt-6 border rounded p-4 bg-gray-50 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
           <strong>Placeholder:</strong> Workflow design visual will be added here.
         </div>
       </>
@@ -432,12 +432,14 @@ function Sidebar({ sections, activeId, onSelect }) {
             }}
             className={cn(
               "flex items-center w-full text-left rounded px-3 py-2 transition-colors",
-              isActive ? "bg-blue-50 text-blue-700 font-semibold" : "text-gray-800 hover:bg-gray-100"
+              isActive
+                ? "bg-blue-50 text-blue-700 font-semibold dark:bg-blue-900 dark:text-blue-300"
+                : "text-gray-800 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
             )}
             aria-expanded={hasChildren ? open : undefined}
           >
             {Icon ? (
-              <span className="mr-3 text-gray-500" aria-hidden>
+              <span className="mr-3 text-gray-500 dark:text-gray-400" aria-hidden>
                 <Icon />
               </span>
             ) : (
@@ -467,7 +469,9 @@ function Sidebar({ sections, activeId, onSelect }) {
                     <button
                       className={cn(
                         "w-full text-left px-3 py-2 rounded transition-colors text-sm",
-                        activeId === child.id ? "bg-blue-100 text-blue-700 font-medium" : "hover:bg-gray-100 text-gray-700"
+                        activeId === child.id
+                          ? "bg-blue-100 text-blue-700 font-medium dark:bg-blue-900 dark:text-blue-300"
+                          : "hover:bg-gray-100 text-gray-700 dark:text-gray-200 dark:hover:bg-gray-700"
                       )}
                       onClick={() => onSelect(child.id)}
                     >
@@ -484,12 +488,12 @@ function Sidebar({ sections, activeId, onSelect }) {
   }
 
   return (
-    <aside className="w-1/5 min-w-[220px] max-w-xs h-screen bg-white border-r border-gray-200 fixed left-0 top-16 flex flex-col">
-      <div className="p-6 pb-2 text-xl font-bold text-gray-900">Documentation</div>
+    <aside className="w-1/5 min-w-[220px] max-w-xs h-screen bg-white border-r border-gray-200 fixed left-0 top-16 flex flex-col dark:bg-gray-900 dark:border-gray-800">
+      <div className="p-6 pb-2 text-xl font-bold text-gray-900 dark:text-gray-100">Documentation</div>
       <nav className="flex-1 overflow-y-auto">
         {sections.map((section) => (
           <div key={section.title} className="mb-6">
-            <div className="px-6 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            <div className="px-6 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400">
               {section.title}
             </div>
             <ul>
@@ -516,8 +520,8 @@ function MainContent({ activeId }) {
         transition={{ duration: 0.25 }}
         className="max-w-3xl mx-auto py-12 px-8"
       >
-        <h1 className="text-3xl font-bold mb-6 text-gray-900">{content.heading}</h1>
-        <div className="prose prose-blue max-w-none text-gray-800">{content.body}</div>
+          <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">{content.heading}</h1>
+          <div className="prose prose-blue max-w-none text-gray-800 dark:text-gray-200">{content.body}</div>
       </motion.div>
     </AnimatePresence>
   );
@@ -571,8 +575,8 @@ export default function CuvaDocsApp() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header docsIndex={docsIndex} onSelectDoc={handleSelectDoc} onSearch={handleSearch} />
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-gray-100">
+        <Header docsIndex={docsIndex} onSelectDoc={handleSelectDoc} onSearch={handleSearch} />
 
       <Sidebar
         sections={docsSections}

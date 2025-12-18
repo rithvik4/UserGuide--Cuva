@@ -7,5 +7,7 @@ module.exports = {
   theme: {
     extend: {},
   },
+  // Use class-based dark mode so toggling `document.documentElement.classList` works
+  darkMode: 'class',
   plugins: [],
 };

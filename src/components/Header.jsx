@@ -3,7 +3,15 @@ import logo from "../assets/logo.jpeg";
 
 export default function Header({ docsIndex = [], onSelectDoc = () => {}, onSearch = () => {} }) {
   const [query, setQuery] = useState("");
-  const [isDark, setIsDark] = useState(() => typeof document !== "undefined" && document.documentElement.classList.contains("dark"));
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window === "undefined") return false;
+    try {
+      const stored = localStorage.getItem("theme");
+      if (stored === "dark") return true;
+      if (stored === "light") return false;
+    } catch (e) {}
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
   const [showDropdown, setShowDropdown] = useState(false);
   const ref = useRef(null);
 
@@ -18,6 +26,9 @@ export default function Header({ docsIndex = [], onSelectDoc = () => {}, onSearc
   useEffect(() => {
     if (isDark) document.documentElement.classList.add("dark");
     else document.documentElement.classList.remove("dark");
+    try {
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    } catch (e) {}
   }, [isDark]);
 
   return (
