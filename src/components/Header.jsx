@@ -1,9 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.jpeg";
 
-export default function Header() {
+export default function Header({ docsIndex = [], onSelectDoc = () => {}, onSearch = () => {} }) {
   const [query, setQuery] = useState("");
   const [isDark, setIsDark] = useState(() => typeof document !== "undefined" && document.documentElement.classList.contains("dark"));
+  const [showDropdown, setShowDropdown] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    function handleClick(e) {
+      if (ref.current && !ref.current.contains(e.target)) setShowDropdown(false);
+    }
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
 
   useEffect(() => {
     if (isDark) document.documentElement.classList.add("dark");
@@ -25,17 +35,60 @@ export default function Header() {
         <div className="flex-1 flex justify-center px-4">
           <div className="w-full max-w-2xl">
             <label className="sr-only">Search</label>
-            <div className="relative">
-              <input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search the docs..."
-                className="w-full border rounded-lg py-2 pl-10 pr-4 text-sm bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
+            <div className="relative" ref={ref}>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setShowDropdown(false);
+                  onSearch(query.trim());
+                }}
+              >
+                <input
+                  value={query}
+                  onChange={(e) => {
+                    setQuery(e.target.value);
+                    setShowDropdown(true);
+                  }}
+                  placeholder="Search the docs..."
+                  className="w-full border rounded-lg py-2 pl-10 pr-4 text-sm bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
+              </form>
               <svg className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none">
                 <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 <circle cx="11" cy="11" r="6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
+
+              {showDropdown && query.trim().length > 0 && (
+                <div className="absolute left-0 right-0 mt-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-lg z-50">
+                  {(docsIndex
+                    .filter((d) => {
+                      const q = query.trim().toLowerCase();
+                      return (
+                        d.label.toLowerCase().includes(q) ||
+                        (d.heading && d.heading.toLowerCase().includes(q)) ||
+                        (d.id && d.id.toLowerCase().includes(q))
+                      );
+                    })
+                    .slice(0, 6)
+                    .map((d) => (
+                      <button
+                        key={d.id}
+                        onClick={() => {
+                          setQuery("");
+                          setShowDropdown(false);
+                          onSelectDoc(d.id);
+                        }}
+                        className="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      >
+                        <div className="text-sm font-medium text-gray-900 dark:text-gray-100">{d.label}</div>
+                        {d.heading ? <div className="text-xs text-gray-500 dark:text-gray-400">{d.heading}</div> : null}
+                      </button>
+                    )) )}
+                  {docsIndex.filter(d=>d.label.toLowerCase().includes(query.trim().toLowerCase())).length===0 && (
+                    <div className="px-4 py-2 text-sm text-gray-500">No results</div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>

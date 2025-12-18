@@ -1,7 +1,8 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "./lib/utils";
 import Header from "./components/Header";
+import SearchResults from "./SearchResults";
 
 // Simple icon set (inline SVG). Add or replace icons as needed.
 const Icons = {
@@ -524,9 +525,54 @@ function MainContent({ activeId }) {
 
 export default function CuvaDocsApp() {
   const [activeId, setActiveId] = useState("welcome");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Build a simple docs index from the sections and content
+  const docsIndex = useMemo(() => {
+    const items = [];
+    docsSections.forEach((section) => {
+      section.items.forEach((item) => {
+        items.push({ id: item.id, label: item.label, heading: (docsContent[item.id] && docsContent[item.id].heading) || "" });
+        if (Array.isArray(item.children)) {
+          item.children.forEach((child) => {
+            items.push({ id: child.id, label: child.label, heading: (docsContent[child.id] && docsContent[child.id].heading) || "" });
+          });
+        }
+      });
+    });
+    return items;
+  }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get("q");
+    if (q) {
+      setSearchQuery(q);
+      setActiveId("search-results");
+    }
+  }, []);
+
+  function handleSelectDoc(id) {
+    setActiveId(id);
+    setSearchQuery("");
+    // remove q param when navigating to a doc
+    const url = new URL(window.location.href);
+    url.searchParams.delete("q");
+    window.history.replaceState(null, "", url.toString());
+  }
+
+  function handleSearch(q) {
+    setSearchQuery(q);
+    setActiveId("search-results");
+    const url = new URL(window.location.href);
+    if (q) url.searchParams.set("q", q);
+    else url.searchParams.delete("q");
+    window.history.pushState(null, "", url.toString());
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header docsIndex={docsIndex} onSelectDoc={handleSelectDoc} onSearch={handleSearch} />
 
       <Sidebar
         sections={docsSections}
@@ -535,7 +581,11 @@ export default function CuvaDocsApp() {
       />
 
       <main className="ml-[20%] w-[80%] min-h-screen pt-16">
-        <MainContent activeId={activeId} />
+        {activeId === "search-results" ? (
+          <SearchResults query={searchQuery} docsIndex={docsIndex} onSelectDoc={handleSelectDoc} />
+        ) : (
+          <MainContent activeId={activeId} />
+        )}
       </main>
     </div>
   );
