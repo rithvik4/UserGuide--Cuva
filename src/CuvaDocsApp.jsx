@@ -65,8 +65,7 @@ const docsSections = [
     title: "Get Started",
     items: [
       { id: "welcome", label: "Welcome to Cuva AI 👋", icon: null },
-      { id: "overview", label: "Overview of the Cuva AI platform", icon: null },
-      { id: "what-you-can-build", label: "What users can build with Cuva AI", icon: null },
+      { id: "overview", label: "Overview", icon: null },
     ],
   },
   {
@@ -132,14 +131,36 @@ const docsContent = {
     body: (
       <>
         <p>
-          Welcome to the Cuva AI Enterprise AI Agent Platform documentation. Here you’ll find everything you need to get started, understand core concepts, and build powerful AI-driven solutions for your enterprise.
+          Welcome to the Cuva AI documentation. This guide will take you from setting up your first workflow to building advanced, intelligent automations.
         </p>
         <div className="my-4" />
         <p>
-            From initial setup through to development, this guide has you covered. It's actively maintained and we invite your contributions to make it even better.
+           "From initial setup through to development, this guide has you covered. It's actively maintained and <span className="font-bold"> we invite your </span>  <span className="font-bold text-blue-600 dark:text-blue-400 underline underline-offset-4">contributions</span> to make it even better."
         </p>
         <div className="mt-6 border rounded p-4 bg-gray-50 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
-          <strong>Placeholder:</strong> Platform overview diagram will be added here.
+          <strong>Introduction</strong>
+          <div className="mt-3 w-full rounded overflow-hidden border border-gray-200 dark:border-gray-700">
+            <div style={{position: 'relative', paddingTop: '56.25%'}}>
+              <iframe
+                title="Cuva overview"
+                src="https://www.youtube.com/embed/BnquzIGVuKc"
+                loading="lazy"
+                style={{position: 'absolute', top:0, left:0, width:'100%', height:'100%', border:0}}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+       
+        <div className="mt-6">
+          <h2 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">About Cuva</h2>
+          <p className="mb-2 text-gray-700 dark:text-gray-200">
+            To empower the world's most complex organizations with an <span className="font-bold"> intelligent, autonomous workforce </span> built from AI Agents, driving unprecedented efficiency, operational resilience, and competitive growth.
+          </p>
+          <p className="text-gray-700 dark:text-gray-200">
+            At Cuva AI, we believe the future of enterprise operations is <span className="font-bold">Agentic</span>. Our mission is to provide the platform that makes building, deploying, and managing this AI agent workforce simple, scalable, and secure.
+          </p>
         </div>
       </>
       
@@ -150,7 +171,7 @@ const docsContent = {
     body: (
       <>
         <p>
-          Cuva AI empowers organizations to create, deploy, and manage intelligent agents that automate workflows, integrate with enterprise systems, and deliver actionable insights securely at scale.
+         Cuva AI is an enterprise-grade AI orchestration platform designed to be the foundational layer for AI-native financial enterprises. By unifying specialized agents, integrated knowledge systems, and domain-specific models, Cuva AI enables financial institutions to automate high-complexity processes, transform client engagement, and achieve unprecedented operational efficiency. 
         </p>
         <ul className="list-disc ml-6 mt-4 space-y-1">
           <li>Modular agent architecture</li>
@@ -158,19 +179,6 @@ const docsContent = {
           <li>Enterprise-grade security</li>
           <li>Seamless integrations</li>
         </ul>
-      </>
-    ),
-  },
-  "what-you-can-build": {
-    heading: "What users can build with Cuva AI",
-    body: (
-      <>
-        <p>
-          Build custom agents for data analysis, process automation, knowledge management, and more. Cuva AI adapts to diverse enterprise needs, from customer support to internal operations.
-        </p>
-        <div className="mt-6 border rounded p-4 bg-gray-50 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
-          <strong>Placeholder:</strong> Use case visualizations coming soon.
-        </div>
       </>
     ),
   },
@@ -510,6 +518,22 @@ function Sidebar({ sections, activeId, onSelect }) {
 
 function MainContent({ activeId }) {
   const content = docsContent[activeId] || docsContent["welcome"];
+  // Build breadcrumb parts: [section, item, child?]
+  function getBreadcrumbParts(id) {
+    for (const section of docsSections) {
+      for (const item of section.items) {
+        if (item.id === id) return [section.title, item.label];
+        if (Array.isArray(item.children)) {
+          for (const child of item.children) {
+            if (child.id === id) return [section.title, item.label, child.label];
+          }
+        }
+      }
+    }
+    return null;
+  }
+
+  const bc = getBreadcrumbParts(activeId);
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -520,6 +544,17 @@ function MainContent({ activeId }) {
         transition={{ duration: 0.25 }}
         className="max-w-3xl mx-auto py-12 px-8"
       >
+          {bc ? (
+            <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+              {bc.map((p, i) => (
+                <span key={i}>
+                  {i > 0 && <span className="mx-2">›</span>}
+                  <span className="inline-block">{p}</span>
+                </span>
+              ))}
+            </div>
+          ) : null}
+
           <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">{content.heading}</h1>
           <div className="prose prose-blue max-w-none text-gray-800 dark:text-gray-200">{content.body}</div>
       </motion.div>
