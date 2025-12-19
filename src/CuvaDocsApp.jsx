@@ -58,71 +58,143 @@ const Icons = {
     </svg>
   ),
 };
+// (moved docsContent mappings are defined after the main docsContent object)
 
-// Sidebar navigation structure
+// Sidebar navigation structure (reorganized)
 const docsSections = [
   {
     title: "Get Started",
     items: [
-      { id: "welcome", label: "Welcome to Cuva AI 👋", icon: null },
-      { id: "overview", label: "Overview", icon: null },
+      { id: "introduction", label: "Introduction to Cuva AI", icon: null },
+      { id: "platform-overview", label: "Platform Overview", icon: null },
+      { id: "roles-permissions", label: "Roles and Permissions", icon: null },
+      { id: "quickstart-first-agent", label: "Quickstart: Build Your First Agent", icon: null },
     ],
   },
   {
-    title: "Core Concepts",
+    title: "Core Platform",
     items: [
-      {
-        id: "agents",
-        label: "Agents",
-        icon: Icons.Agents,
-        children: [
-          { id: "agent-creation", label: "Agent Creation" },
-        ],
-      },
-      {
-        id: "workflows",
-        label: "Workflows",
-        icon: Icons.Workflows,
-        children: [
-          { id: "workflow-building", label: "Workflow Building" },
-          { id: "workflow-design", label: "Designing workflows" },
-        ],
-      },
-      { id: "triggers", label: "Triggers", icon: Icons.Triggers, children: [ { id: "actions-explained", label: "Actions" }, { id: "conditional-logic", label: "Conditional logic" } ] },
+      { id: "architecture-overview", label: "Architecture Overview" },
       {
         id: "connectors",
         label: "Connectors",
-        icon: Icons.Connectors,
         children: [
-          { id: "available-connectors", label: "Available connectors" },
-          { id: "connector-config", label: "Connector configuration" },
-          { id: "custom-connector", label: "Custom connector creation" },
+          { id: "app-connectors", label: "App Connectors" },
+          { id: "financial-connectors", label: "Financial Connectors" },
         ],
       },
-      { id: "knowledgebase", label: "Knowledgebase", icon: Icons.KB, children: [ { id: "knowledgebase-mgmt", label: "Management" }, { id: "uploading-docs", label: "Uploading documents" } ] },
+      {
+        id: "knowledge-systems",
+        label: "Knowledge Systems",
+        children: [
+          { id: "knowledge-base", label: "Knowledge Base" },
+          { id: "knowledge-graph", label: "Knowledge Graph" },
+          { id: "retrieval-augmented-generation", label: "Retrieval Augmented Generation (RAG)" },
+          { id: "agentic-etl", label: "Agentic ETL" },
+        ],
+      },
+      {
+        id: "ai-agent-studio",
+        label: "AI Agent Studio",
+        children: [
+          { id: "visual-workflow-builder", label: "Visual Workflow Builder" },
+          { id: "triggers", label: "Triggers" },
+          { id: "processing-agents", label: "Processing Agents" },
+          { id: "terminators", label: "Terminators" },
+          { id: "flow-control", label: "Flow Control" },
+        ],
+      },
+      {
+        id: "cuvabot",
+        label: "CuvaBot",
+        children: [
+          { id: "conversational-queries", label: "Conversational Queries" },
+          { id: "enterprise-search", label: "Enterprise Search" },
+          { id: "workflow-execution", label: "Workflow Execution" },
+        ],
+      },
     ],
   },
   {
-    title: "Security & authentication basics",
+    title: "How-To Guides",
     items: [
-      { id: "roles-permissions", label: "User roles & permissions (Admin, Builder, Viewer)", icon: Icons.Key },
+      { id: "how-to-connect-enterprise-systems", label: "Connect Enterprise Systems" },
+      { id: "build-knowledge-system", label: "Build a Knowledge System" },
+      { id: "create-ai-agent-workflow", label: "Create an AI Agent Workflow" },
+      { id: "configure-triggers-terminators", label: "Configure Triggers and Terminators" },
+      {
+        id: "run-agents",
+        label: "Run Agents",
+        children: [
+          { id: "via-chat", label: "Via Chat" },
+          { id: "via-api", label: "Via API" },
+          { id: "via-scheduler", label: "Via Scheduler" },
+          { id: "via-forms", label: "Via Forms" },
+          { id: "monitor-iterate-agents", label: "Monitor and Iterate Agents" },
+        ],
+      },
     ],
   },
   {
-    title: "Examples & Templates",
+    title: "Enterprise Implementation",
     items: [
-      { id: "templates", label: "Ready-to-use templates", icon: Icons.Templates },
-      { id: "sample-use-cases", label: "Sample enterprise use cases", icon: Icons.Templates },
+      { id: "implementation-overview", label: "Implementation Overview" },
+      { id: "four-step-client-rollout", label: "Four Step Client Rollout" },
+      { id: "security-privacy-compliance", label: "Security, Privacy, and Compliance" },
+      {
+        id: "deployment-options",
+        label: "Deployment Options",
+        children: [
+          { id: "cloud-deployment", label: "Cloud Deployment" },
+          { id: "on-prem-deployment", label: "On-Prem Deployment" },
+        ],
+      },
+      { id: "scaling-across-teams-clients", label: "Scaling Across Teams and Clients" },
     ],
   },
   {
-    title: "FAQs & Troubleshooting",
+    title: "Reference",
     items: [
-      { id: "common-issues", label: "Common issues", icon: Icons.FAQ },
-      { id: "quick-fixes", label: "Quick fixes and checks", icon: Icons.FAQ },
+      { id: "agent-lifecycle", label: "Agent Lifecycle" },
+      { id: "trigger-types", label: "Trigger Types" },
+      { id: "connector-reference", label: "Connector Reference" },
+      { id: "knowledge-object-types", label: "Knowledge Object Types" },
+      { id: "execution-modes", label: "Execution Modes" },
+      { id: "audit-logs-explainability", label: "Audit Logs and Explainability" },
+      { id: "glossary", label: "Glossary" },
+    ],
+  },
+  {
+    title: "Examples and Use Cases",
+    items: [
+      { id: "client-onboarding", label: "Client Onboarding" },
+      { id: "kyc-aml-automation", label: "KYC and AML Automation" },
+      { id: "invoice-payment-workflows", label: "Invoice and Payment Workflows" },
+      { id: "wealth-management-assistant", label: "Wealth Management Assistant" },
+      { id: "m-and-a-analysis-workflow", label: "M and A Analysis Workflow" },
+    ],
+  },
+  {
+    title: "Operations",
+    items: [
+      { id: "monitoring-analytics", label: "Monitoring and Analytics" },
+      { id: "performance-metrics", label: "Performance Metrics" },
+      { id: "error-handling", label: "Error Handling" },
+      { id: "versioning-updates", label: "Versioning and Updates" },
+    ],
+  },
+  {
+    title: "Help and Support",
+    items: [
+      { id: "troubleshooting", label: "Troubleshooting" },
+      { id: "faqs", label: "FAQs" },
+      { id: "release-notes", label: "Release Notes" },
+      { id: "contact-support", label: "Contact and Support" },
     ],
   },
 ];
+
+// Helpful aliases for navigation ids that should map to existing content
 
 // Content for each section
 const docsContent = {
@@ -166,12 +238,12 @@ const docsContent = {
       
     ),
   },
-  overview: {
+  "platform-overview": {
     heading: "Overview of the Cuva AI platform",
     body: (
       <>
         <p>
-          Cuva AI is an enterprise-grade AI orchestration platform designed to be the foundational layer for AI-native enterprises. By unifying specialized agents, integrated knowledge systems, and domain-specific models, Cuva AI enables organizations to automate high-complexity processes, transform client engagement, and achieve unprecedented operational efficiency.
+          Cuva AI is an enterprise-grade AI orchestration platform designed to be the foundational layer for AI-native financial enterprises. By unifying specialized agents, integrated knowledge systems, and domain-specific models, Cuva AI enables financial institutions to automate high-complexity processes, transform client engagement, and achieve unprecedented operational efficiency.
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">1. Agent Orchestration</h2>
@@ -240,7 +312,7 @@ const docsContent = {
                 </tr>
                 <tr>
                   <td className="px-4 py-4 align-top text-sm font-semibold text-gray-900 dark:text-gray-100">CuvaBot</td>
-                  <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-200">The conversational interface for agents. It allows users to chat with the Knowledge Systems for compliance-ready answers, perform Enterprise Search across all connected systems, and Trigger and Execute Workflows via natural language commands.</td>
+                  <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-200">The conversational interface for agents. It allows users to: Chat with the Knowledge Systems for compliance-ready answers, perform Enterprise Search across all connected systems, and Trigger and Execute Workflows via natural language commands.</td>
                 </tr>
               </tbody>
             </table>
@@ -249,10 +321,10 @@ const docsContent = {
 
         <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">Implementation: Client Implementation Steps</h3>
         <ol className="list-decimal ml-6 mt-3 space-y-1 text-gray-700 dark:text-gray-200">
-          <strong>Step 1:</strong> Connect to client systems, retrieve, and inject. <br></br>
-          <strong>Step 2:</strong> Build knowledge base: Ingest data, create a semantic enterprise knowledge base, and generate a linked knowledge graph.  <br></br>
-          <strong>Step 3:</strong> Build AI agents + workflows: Design workflows using the visual canvas, attach knowledge packs and connectors, and configure LLMs.  <br></br>
-          <strong>Step 4:</strong> Monitor &amp; iterate: Deploy with monitoring tools, capture feedback, and refine accuracy.  <br></br>
+          <strong>Step 1:</strong> Connect to client systems, retrieve, and inject.<br></br>
+          <strong>Step 2:</strong> Build knowledge base: Ingest data, create a semantic enterprise knowledge base, and generate a linked knowledge graph.<br></br>
+          <strong>Step 3:</strong> Build AI agents + workflows: Design workflows using the visual canvas, attach knowledge packs and connectors, and configure LLMs.<br></br>
+          <strong>Step 4:</strong> Monitor &amp; iterate: Deploy with monitoring tools, capture feedback, and refine accuracy.<br></br>
         </ol>
 
         <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">AI Agent Orchestration &amp; Deployment</h3>
@@ -261,7 +333,7 @@ const docsContent = {
           <p><strong>Training:</strong> Agents are fine-tuned by adjusting and refining prompts, optimizing flow control, and improving how they process inputs and generate outputs.</p>
           <p className="mt-2"><strong>Running:</strong> AI agents can be triggered in six different ways: API, Scheduler, Chat (e.g., via CuvaBot), Forms, Workflows, Manual.</p>
           <p className="mt-2"><strong>Monitoring:</strong> The platform tracks agent activity, measures performance, and identifies bottlenecks to continuously improve agent behavior.</p>
-          <p className="mt-2"><strong>Deployment Options:</strong> Cloud Deployment (AWS, Azure, GCP) and On-Prem Deployment for high-security environments supporting LLMs like OpenAI, Gemini, and Claude.</p>
+          <p className="mt-2"><strong>Deployment Options:</strong> Cloud Deployment: Fully compatible with AWS, Azure, and GCP, offering quick setup and scalable infrastructure. On-Prem Deployment: Designed for high-security, self-managed environments and supports LLMs like OpenAI, Gemini, and Claude.</p>
         </div>
       </>
     ),
@@ -369,8 +441,39 @@ const docsContent = {
     body: (
       <>
         <p>
-          Connectors enable agents to interact with external systems, databases, and APIs. Choose from a library of pre-built connectors or create custom integrations.
+          Connectors are pre-configured software modules designed to translate the unique data models and API protocols of third-party applications into a standardized format the AI can understand.
         </p>
+        <ul className="list-disc ml-6 mt-3 space-y-1 text-gray-700 dark:text-gray-200">
+          <li><strong>Tailor-Made Integration:</strong> Each connector is purpose-built for a specific app (e.g., Salesforce, SharePoint) to ensure optimized data exchange.</li>
+          <li><strong>Permission-Aware:</strong> They respect your organization's existing security protocols, ensuring agents only access data the user is authorized to see.</li>
+          <li><strong>Unified Access:</strong> They consolidate fragmented data into a single "Digital Handshake," allowing agents to focus on reasoning rather than managing complex API calls.</li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">How We Use Connectors in Cuva AI</h3>
+        <p className="text-gray-700 dark:text-gray-200">Connectors serve as the "hands and eyes" of your AI agents throughout their operational lifecycle:</p>
+        <ul className="list-disc ml-6 mt-3 space-y-1 text-gray-700 dark:text-gray-200">
+          <li><strong>Agentic ETL (Data Building):</strong> Agents use connectors to automatically crawl enterprise sources like SharePoint or core banking databases to extract, clean, and load raw data into your Knowledge Base.</li>
+          <li><strong>Visual Workflow Nodes:</strong> In the AI Agent Studio, connectors appear as drag-and-drop nodes. A Trigger Node might start an agent when a new email arrives, while an Action Node might update a CRM record.</li>
+          <li><strong>Real-Time Retrieval (RAG):</strong> When you ask CuvaBot a question, connectors fetch live data from connected systems to ensure answers are grounded in current facts.</li>
+          <li><strong>Task Execution:</strong> Agents use connectors to perform actions in source systems—processing invoices, escalating support tickets, or updating records directly.</li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">Available Connectors</h3>
+        <div className="mt-2">
+          <ul className="list-none space-y-2 text-gray-700 dark:text-gray-200">
+            <li><strong>CRM:</strong> Salesforce, HubSpot, Pipedrive</li>
+            <li><strong>Collaboration:</strong> Slack, Microsoft Teams, Asana</li>
+            <li><strong>Productivity:</strong> Microsoft Word, Excel, PowerPoint, Google Sheets</li>
+            <li><strong>File Storage:</strong> OneDrive, Google Drive, SharePoint, Dropbox, FTP</li>
+            <li><strong>E-mail:</strong> Gmail, Outlook, Mailchimp</li>
+            <li><strong>Communication:</strong> Zoom, WhatsApp, Webex</li>
+            <li><strong>Financial CRM:</strong> WealthBox, Salesforce (financial), AdvyZon, Advisor Engine</li>
+            <li><strong>KYC / AML:</strong> LexisNexis, Alloy, Onfido, Jumio, Socure</li>
+            <li><strong>Core Banking:</strong> FIS core banking, FiServ DNA, FiServ Signature, Mambu</li>
+            <li><strong>Wealth Management:</strong> BlackRock Aladdin, SimCorp Dimension, Orion Advisor</li>
+            <li><strong>Payments:</strong> PayPal, Stripe, MasterCard, Visa API</li>
+          </ul>
+        </div>
       </>
     ),
   },
@@ -502,6 +605,9 @@ const docsContent = {
   },
 };
 
+// Helpful aliases for navigation ids that should map to existing content
+docsContent["introduction"] = docsContent["welcome"];
+
 function Sidebar({ sections, activeId, onSelect }) {
   function SidebarItem({ item }) {
     const Icon = item.icon;
@@ -601,7 +707,14 @@ function Sidebar({ sections, activeId, onSelect }) {
 }
 
 function MainContent({ activeId }) {
-  const content = docsContent[activeId] || docsContent["welcome"];
+  const content = docsContent[activeId] || {
+    heading: "Content Coming Soon",
+    body: (
+      <>
+        <p className="text-gray-700 dark:text-gray-200">This section doesn't have content yet. Check back soon or contact the docs owner.</p>
+      </>
+    ),
+  };
   // Build breadcrumb parts: [section, item, child?]
   function getBreadcrumbParts(id) {
     for (const section of docsSections) {
@@ -647,7 +760,7 @@ function MainContent({ activeId }) {
 }
 
 export default function CuvaDocsApp() {
-  const [activeId, setActiveId] = useState("welcome");
+  const [activeId, setActiveId] = useState("introduction");
   const [searchQuery, setSearchQuery] = useState("");
 
   // Build a simple docs index from the sections and content
