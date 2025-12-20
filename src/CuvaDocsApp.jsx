@@ -4,113 +4,194 @@ import { cn } from "./lib/utils";
 import Header from "./components/Header";
 import SearchResults from "./SearchResults";
 
-// Simple icon set (inline SVG). Add or replace icons as needed.
+// Updated illustrative + semantic icon set (inline SVGs).
 const Icons = {
   Agents: (props) => (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden className="w-5 h-5" {...props}>
-      <path d="M12 12a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M4 20a8 8 0 0116 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 12a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4 20a8 8 0 0116 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
   Workflows: (props) => (
     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
-      <path d="M3 7h6l2 3 4-6 6 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M3 7h6l2 3 4-6 6 11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
   Triggers: (props) => (
     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
-      <path d="M12 2v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M5 12h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M7 20h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 2v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M5 12h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
   Connectors: (props) => (
     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
-      <path d="M7 7h10v10H7z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M3 12h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M19 12h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M7 7h10v10H7z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 12h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M19 12h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
   KB: (props) => (
     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
-      <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M4 4.5A2.5 2.5 0 016.5 2H20v15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4 4.5A2.5 2.5 0 016.5 2H20v15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
   Templates: (props) => (
     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
-      <rect x="3" y="3" width="7" height="7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-      <rect x="14" y="3" width="7" height="7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-      <rect x="3" y="14" width="7" height="7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-      <rect x="14" y="14" width="7" height="7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+      <rect x="3" y="3" width="7" height="7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <rect x="14" y="3" width="7" height="7" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
     </svg>
   ),
   FAQ: (props) => (
     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
-      <path d="M12 18h.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M9.09 9a3 3 0 015.82 0c0 1.5-1.5 2-2.5 2.5C11 12 11 13 11 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.3" />
+      <path d="M12 17h.01" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M9 10.5a3 3 0 016 0c0 1.6-1.7 2-2.5 2.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
   Key: (props) => (
     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
-      <path d="M21 11l-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <circle cx="8" cy="13" r="3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M21 11l-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="8" cy="13" r="3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  Chat: (props) => (
+    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
+      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  Search: (props) => (
+    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
+      <circle cx="11" cy="11" r="6" stroke="currentColor" strokeWidth="1.3" />
+      <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+    </svg>
+  ),
+  Cloud: (props) => (
+    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
+      <path d="M20 17.5A4.5 4.5 0 0016 10h-1.26A6 6 0 106 18h10" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  Shield: (props) => (
+    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
+      <path d="M12 2l7 4v5c0 5-3.58 9.74-7 11-3.42-1.26-7-6-7-11V6l7-4z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  Database: (props) => (
+    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
+      <ellipse cx="12" cy="6" rx="8" ry="3" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6" stroke="currentColor" strokeWidth="1.2" />
+    </svg>
+  ),
+  User: (props) => (
+    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
+      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="1.3" />
+    </svg>
+  ),
+  Book: (props) => (
+    <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" {...props}>
+      <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4 6.5A2.5 2.5 0 016.5 4H20v15" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
 };
+// Small set of feature cards shown on the welcome page
+const welcomeCards = [
+  {
+    title: "AI-Powered Processing",
+    description:
+      "Extract data, summarize content, categorize information, and generate insights using advanced AI models",
+    icon: Icons.Agents,
+  },
+  {
+    title: "Integration Hub",
+    description:
+      "Connect Gmail, Slack, Salesforce, Airtable, Google Sheets, and 50+ other services seamlessly",
+    icon: Icons.Connectors,
+  },
+  {
+    title: "Smart Automation",
+    description:
+      "Trigger workflows from schedules, webhooks, emails, or Slack messages—or use agents on-demand",
+    icon: Icons.Triggers,
+  },
+  {
+    title: "Team Collaboration",
+    description:
+      "Share workflows, credentials, and agents across your workspace for true team automation",
+    icon: Icons.User,
+  },
+  {
+    title: "Visual Interfaces",
+    description:
+      "Transform complex workflows into simple forms that anyone on your team can use",
+    icon: Icons.Book,
+  },
+  {
+    title: "Scalable Infrastructure",
+    description:
+      "Run thousands of automations simultaneously with enterprise-grade reliability",
+    icon: Icons.Database,
+  },
+];
+
 // (moved docsContent mappings are defined after the main docsContent object)
 
-// Sidebar navigation structure (reorganized)
+// Sidebar navigation structure (reorganized) with semantic icons
 const docsSections = [
   {
     title: "Get Started",
     items: [
-      { id: "introduction", label: "Introduction to Cuva AI", icon: null },
-      { id: "platform-overview", label: "Platform Overview", icon: null },
-      { id: "roles-permissions", label: "Roles and Permissions", icon: null },
-      { id: "quickstart-first-agent", label: "Quickstart: Build Your First Agent", icon: null },
+      { id: "introduction", label: "Introduction to Cuva AI", icon: Icons.Book },
+      { id: "platform-overview", label: "Platform Overview", icon: Icons.KB },
+      { id: "roles-permissions", label: "Roles and Permissions", icon: Icons.Shield },
+      { id: "quickstart-first-agent", label: "Quickstart: Build Your First Agent", icon: Icons.Agents },
     ],
   },
   {
     title: "Core Platform",
     items: [
-      { id: "architecture-overview", label: "Architecture Overview" },
+      { id: "architecture-overview", label: "Architecture Overview", icon: Icons.Database },
       {
         id: "connectors",
         label: "Connectors",
+        icon: Icons.Connectors,
         children: [
-          { id: "app-connectors", label: "App Connectors" },
-          { id: "financial-connectors", label: "Financial Connectors" },
+          { id: "app-connectors", label: "App Connectors", icon: Icons.Connectors },
+          { id: "financial-connectors", label: "Financial Connectors", icon: Icons.Database },
         ],
       },
       {
         id: "knowledge-systems",
         label: "Knowledge Systems",
+        icon: Icons.KB,
         children: [
-          { id: "knowledge-base", label: "Knowledge Base" },
-          { id: "knowledge-graph", label: "Knowledge Graph" },
-          { id: "retrieval-augmented-generation", label: "Retrieval Augmented Generation (RAG)" },
-          { id: "agentic-etl", label: "Agentic ETL" },
+          { id: "knowledge-base", label: "Knowledge Base", icon: Icons.Database },
+          { id: "knowledge-graph", label: "Knowledge Graph", icon: Icons.KB },
+          { id: "retrieval-augmented-generation", label: "Retrieval Augmented Generation (RAG)", icon: Icons.Search },
+          { id: "agentic-etl", label: "Agentic ETL", icon: Icons.Workflows },
         ],
       },
       {
         id: "ai-agent-studio",
         label: "AI Agent Studio",
+        icon: Icons.Workflows,
         children: [
-          { id: "visual-workflow-builder", label: "Visual Workflow Builder" },
-          { id: "triggers", label: "Triggers" },
-          { id: "processing-agents", label: "Processing Agents" },
-          { id: "terminators", label: "Terminators" },
-          { id: "flow-control", label: "Flow Control" },
+          { id: "visual-workflow-builder", label: "Visual Workflow Builder", icon: Icons.Workflows },
+          { id: "triggers", label: "Triggers", icon: Icons.Triggers },
+          { id: "processing-agents", label: "Processing Agents", icon: Icons.Agents },
+          { id: "terminators", label: "Terminators", icon: Icons.Shield },
+          { id: "flow-control", label: "Flow Control", icon: Icons.Workflows },
         ],
       },
       {
         id: "cuvabot",
         label: "CuvaBot",
+        icon: Icons.Chat,
         children: [
-          { id: "conversational-queries", label: "Conversational Queries" },
-          { id: "enterprise-search", label: "Enterprise Search" },
-          { id: "workflow-execution", label: "Workflow Execution" },
+          { id: "conversational-queries", label: "Conversational Queries", icon: Icons.Chat },
+          { id: "enterprise-search", label: "Enterprise Search", icon: Icons.Search },
+          { id: "workflow-execution", label: "Workflow Execution", icon: Icons.Workflows },
         ],
       },
     ],
@@ -118,19 +199,20 @@ const docsSections = [
   {
     title: "How-To Guides",
     items: [
-      { id: "how-to-connect-enterprise-systems", label: "Connect Enterprise Systems" },
-      { id: "build-knowledge-system", label: "Build a Knowledge System" },
-      { id: "create-ai-agent-workflow", label: "Create an AI Agent Workflow" },
-      { id: "configure-triggers-terminators", label: "Configure Triggers and Terminators" },
+      { id: "how-to-connect-enterprise-systems", label: "Connect Enterprise Systems", icon: Icons.Connectors },
+      { id: "build-knowledge-system", label: "Build a Knowledge System", icon: Icons.Database },
+      { id: "create-ai-agent-workflow", label: "Create an AI Agent Workflow", icon: Icons.Workflows },
+      { id: "configure-triggers-terminators", label: "Configure Triggers and Terminators", icon: Icons.Triggers },
       {
         id: "run-agents",
         label: "Run Agents",
+        icon: Icons.Agents,
         children: [
-          { id: "via-chat", label: "Via Chat" },
-          { id: "via-api", label: "Via API" },
-          { id: "via-scheduler", label: "Via Scheduler" },
-          { id: "via-forms", label: "Via Forms" },
-          { id: "monitor-iterate-agents", label: "Monitor and Iterate Agents" },
+          { id: "via-chat", label: "Via Chat", icon: Icons.Chat },
+          { id: "via-api", label: "Via API", icon: Icons.Search },
+          { id: "via-scheduler", label: "Via Scheduler", icon: Icons.Cloud },
+          { id: "via-forms", label: "Via Forms", icon: Icons.Book },
+          { id: "monitor-iterate-agents", label: "Monitor and Iterate Agents", icon: Icons.Search },
         ],
       },
     ],
@@ -138,58 +220,59 @@ const docsSections = [
   {
     title: "Enterprise Implementation",
     items: [
-      { id: "implementation-overview", label: "Implementation Overview" },
-      { id: "four-step-client-rollout", label: "Four Step Client Rollout" },
-      { id: "security-privacy-compliance", label: "Security, Privacy, and Compliance" },
+      { id: "implementation-overview", label: "Implementation Overview", icon: Icons.Book },
+      { id: "four-step-client-rollout", label: "Four Step Client Rollout", icon: Icons.User },
+      { id: "security-privacy-compliance", label: "Security, Privacy, and Compliance", icon: Icons.Shield },
       {
         id: "deployment-options",
         label: "Deployment Options",
+        icon: Icons.Cloud,
         children: [
-          { id: "cloud-deployment", label: "Cloud Deployment" },
-          { id: "on-prem-deployment", label: "On-Prem Deployment" },
+          { id: "cloud-deployment", label: "Cloud Deployment", icon: Icons.Cloud },
+          { id: "on-prem-deployment", label: "On-Prem Deployment", icon: Icons.Shield },
         ],
       },
-      { id: "scaling-across-teams-clients", label: "Scaling Across Teams and Clients" },
+      { id: "scaling-across-teams-clients", label: "Scaling Across Teams and Clients", icon: Icons.User },
     ],
   },
   {
     title: "Reference",
     items: [
-      { id: "agent-lifecycle", label: "Agent Lifecycle" },
-      { id: "trigger-types", label: "Trigger Types" },
-      { id: "connector-reference", label: "Connector Reference" },
-      { id: "knowledge-object-types", label: "Knowledge Object Types" },
-      { id: "execution-modes", label: "Execution Modes" },
-      { id: "audit-logs-explainability", label: "Audit Logs and Explainability" },
-      { id: "glossary", label: "Glossary" },
+      { id: "agent-lifecycle", label: "Agent Lifecycle", icon: Icons.Agents },
+      { id: "trigger-types", label: "Trigger Types", icon: Icons.Triggers },
+      { id: "connector-reference", label: "Connector Reference", icon: Icons.Connectors },
+      { id: "knowledge-object-types", label: "Knowledge Object Types", icon: Icons.KB },
+      { id: "execution-modes", label: "Execution Modes", icon: Icons.Workflows },
+      { id: "audit-logs-explainability", label: "Audit Logs and Explainability", icon: Icons.Shield },
+      { id: "glossary", label: "Glossary", icon: Icons.Book },
     ],
   },
   {
     title: "Examples and Use Cases",
     items: [
-      { id: "client-onboarding", label: "Client Onboarding" },
-      { id: "kyc-aml-automation", label: "KYC and AML Automation" },
-      { id: "invoice-payment-workflows", label: "Invoice and Payment Workflows" },
-      { id: "wealth-management-assistant", label: "Wealth Management Assistant" },
-      { id: "m-and-a-analysis-workflow", label: "M and A Analysis Workflow" },
+      { id: "client-onboarding", label: "Client Onboarding", icon: Icons.User },
+      { id: "kyc-aml-automation", label: "KYC and AML Automation", icon: Icons.Shield },
+      { id: "invoice-payment-workflows", label: "Invoice and Payment Workflows", icon: Icons.Database },
+      { id: "wealth-management-assistant", label: "Wealth Management Assistant", icon: Icons.Agents },
+      { id: "m-and-a-analysis-workflow", label: "M and A Analysis Workflow", icon: Icons.Workflows },
     ],
   },
   {
     title: "Operations",
     items: [
-      { id: "monitoring-analytics", label: "Monitoring and Analytics" },
-      { id: "performance-metrics", label: "Performance Metrics" },
-      { id: "error-handling", label: "Error Handling" },
-      { id: "versioning-updates", label: "Versioning and Updates" },
+      { id: "monitoring-analytics", label: "Monitoring and Analytics", icon: Icons.Search },
+      { id: "performance-metrics", label: "Performance Metrics", icon: Icons.Database },
+      { id: "error-handling", label: "Error Handling", icon: Icons.Shield },
+      { id: "versioning-updates", label: "Versioning and Updates", icon: Icons.Templates },
     ],
   },
   {
     title: "Help and Support",
     items: [
-      { id: "troubleshooting", label: "Troubleshooting" },
-      { id: "faqs", label: "FAQs" },
-      { id: "release-notes", label: "Release Notes" },
-      { id: "contact-support", label: "Contact and Support" },
+      { id: "troubleshooting", label: "Troubleshooting", icon: Icons.FAQ },
+      { id: "faqs", label: "FAQs", icon: Icons.FAQ },
+      { id: "release-notes", label: "Release Notes", icon: Icons.Book },
+      { id: "contact-support", label: "Contact and Support", icon: Icons.Chat },
     ],
   },
 ];
@@ -234,8 +317,75 @@ const docsContent = {
             At Cuva AI, we believe the future of enterprise operations is <span className="font-bold">Agentic</span>. Our mission is to provide the platform that makes building, deploying, and managing this AI agent workforce simple, scalable, and secure.
           </p>
         </div>
+        <div className="mt-10">
+          <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">Build AI Automations Without Code</h3>
+          <p className="mb-6 text-gray-700 dark:text-gray-200">Cuva AI is your platform for creating powerful automations using <span className="font-semibold">visual workflows</span> and <span className="font-semibold">intelligent agents</span>—no programming required.</p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="border rounded-lg p-6 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200">
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-full bg-pink-50 text-pink-600"><Icons.Workflows className="w-6 h-6" /></div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Workflows</h4>
+                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">Build reliable, repeatable automations that run the same way every time. Perfect for high-volume, mission-critical tasks.</p>
+                  <ul className="mt-3 text-sm text-gray-600 dark:text-gray-300 list-inside list-none space-y-1">
+                    <li>→ Drag-and-drop visual builder</li>
+                    <li>→ 100+ pre-built nodes</li>
+                    <li>→ Fast, predictable execution</li>
+                  </ul>
+                  <button
+                    onClick={() => window.dispatchEvent(new CustomEvent('select-doc', { detail: 'visual-workflow-builder' }))}
+                    className="mt-4 text-sm font-semibold text-blue-700 underline underline-offset-2"
+                  >
+                    Get Started with Workflows →
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="border rounded-lg p-6 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200">
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-full bg-pink-50 text-pink-600"><Icons.Agents className="w-6 h-6" /></div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Agents</h4>
+                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">Create AI assistants that intelligently use your workflows and tools to solve open-ended tasks. Perfect for complex, decision-based work.</p>
+                  <ul className="mt-3 text-sm text-gray-600 dark:text-gray-300 list-inside list-none space-y-1">
+                    <li>→ Natural language interface</li>
+                    <li>→ Works in Gumloop or Slack</li>
+                    <li>→ Adaptive problem-solving</li>
+                  </ul>
+                  <button
+                    onClick={() => window.dispatchEvent(new CustomEvent('select-doc', { detail: 'processing-agents' }))}
+                    className="mt-4 text-sm font-semibold text-blue-700 underline underline-offset-2"
+                  >
+                    Get Started with Agents →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-8">
+          <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">What You Can Build</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {welcomeCards.map((c, i) => {
+              const Icon = c.icon;
+              return (
+                <div key={i} className="border rounded-lg p-5 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 shadow-sm">
+                  <div className="flex items-start space-x-4">
+                    <div className="p-2 rounded-full bg-blue-50 text-blue-600"><Icon className="w-5 h-5" /></div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100">{c.title}</h4>
+                      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{c.description}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </>
-      
+
     ),
   },
   "platform-overview": {
@@ -796,6 +946,15 @@ export default function CuvaDocsApp() {
     url.searchParams.delete("q");
     window.history.replaceState(null, "", url.toString());
   }
+
+  useEffect(() => {
+    function onSelect(e) {
+      const id = e?.detail;
+      if (id) handleSelectDoc(id);
+    }
+    window.addEventListener("select-doc", onSelect);
+    return () => window.removeEventListener("select-doc", onSelect);
+  }, []);
 
   function handleSearch(q) {
     setSearchQuery(q);
