@@ -144,6 +144,27 @@ const docsSections = [
     items: [
       { id: "introduction", label: "Introduction to Cuva AI", icon: Icons.Book },
       { id: "platform-overview", label: "Platform Overview", icon: Icons.KB },
+      {
+        id: "key-concepts",
+        label: "Key Concepts",
+        icon: Icons.Key,
+        children: [
+          { id: "ai-agents", label: "AI Agents", icon: Icons.Agents },
+          { id: "agentic-workflows", label: "Agentic Workflows", icon: Icons.Workflows },
+          {
+            id: "knowledge-systems-keyconcepts",
+            label: "Knowledge Systems",
+            icon: Icons.KB,
+            children: [
+              { id: "knowledge-base-kc", label: "Knowledge Base", icon: Icons.Database },
+              { id: "knowledge-graph-kc", label: "Knowledge Graph", icon: Icons.KB },
+              { id: "rag-kc", label: "Retrieval Augmented Generation (RAG)", icon: Icons.Search },
+            ],
+          },
+          { id: "connectors-kc", label: "Connectors", icon: Icons.Connectors },
+          { id: "cuvabot-kc", label: "CuvaBot", icon: Icons.Chat },
+        ],
+      },
       { id: "roles-permissions", label: "Roles and Permissions", icon: Icons.Shield },
       { id: "quickstart-first-agent", label: "Quickstart: Build Your First Agent", icon: Icons.Agents },
     ],
@@ -488,6 +509,20 @@ const docsContent = {
       </>
     ),
   },
+  "ai-agents": {
+    heading: "AI Agents",
+    body: (
+      <>
+        <p className="text-gray-700 dark:text-gray-200">
+          Agents are AI-powered autonomous entities designed to solve open-ended goals. Unlike a standard Workflow—which follows a fixed, predetermined path—an Agent makes intelligent, real-time decisions about which tools to use and how to navigate data to achieve a desired outcome.
+        </p>
+
+        <p className="mt-4 text-gray-700 dark:text-gray-200">
+          In the Cuva AI ecosystem, AI Agents are autonomous software entities that act as "digital employees" capable of reasoning, making decisions, and executing tasks within a financial enterprise. Unlike traditional automation that follows rigid, pre-defined scripts, these agents use Large Language Models (LLMs) to understand intent and navigate complex workflows.
+        </p>
+      </>
+    ),
+  },
   agents: {
     heading: "Agents: definition, roles, real-world examples",
     body: (
@@ -527,6 +562,84 @@ const docsContent = {
         <p>
           Workflows define the sequence of actions and logic that agents follow. They enable automation of complex business processes with conditional logic and branching.
         </p>
+      </>
+    ),
+  },
+  "agentic-workflows": {
+    heading: "Agentic Workflows",
+    body: (
+      <>
+        <p className="text-gray-700 dark:text-gray-200">
+          Agentic Workflows are the dynamic operational framework of the Cuva AI platform. Unlike traditional, linear automation, agentic workflows enable AI agents to orchestrate complex processes by making autonomous decisions, adapting to real-time data, and collaborating to reach a specific financial goal.
+        </p>
+
+        <h3 className="text-lg font-semibold mt-4 mb-2 text-gray-900 dark:text-gray-100">What are Agentic Workflows?</h3>
+        <p className="text-gray-700 dark:text-gray-200">
+          An agentic workflow is a self-correcting process where intelligence is embedded into every step of execution. These workflows are defined by:
+        </p>
+        <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
+          <li><strong>Autonomous Decision-Making:</strong> Agents analyze the context of a task—such as buyer-supplier relationships or contract terms—to determine the best next action.</li>
+          <li><strong>Multi-Agent Collaboration:</strong> Different specialized agents (e.g., KYC, AML, and Risk agents) work together, passing data and results between nodes to complete a high-level objective.</li>
+          <li><strong>Reasoning and Adaptability:</strong> The workflow can branch or iterate based on results, allowing agents to solve open-ended tasks that rigid, traditional scripts cannot handle.</li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">How Cuva AI Uses Agentic Workflows</h3>
+        <p className="text-gray-700 dark:text-gray-200">Cuva AI leverages these workflows to transform manual financial operations into high-speed, AI-native processes.</p>
+
+        <h4 className="text-md font-semibold mt-4 mb-2 text-gray-900 dark:text-gray-100">1. Visual Orchestration in the AI Agent Studio</h4>
+        <p className="text-gray-700 dark:text-gray-200">Technical users design workflows using a visual interface that eliminates the need for complex coding:</p>
+        <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
+          <li><strong>Trigger Agents:</strong> Define what initiates the flow, such as a new invoice upload, an API call, a schedule, or a manual command via CuvaBot.</li>
+          <li><strong>Logic Configuration:</strong> Users assemble agent logic tailored to specific needs, such as defining risk thresholds or routing rules.</li>
+          <li><strong>Terminator Agents:</strong> These agents finalize the workflow, ensuring the task is closed, systems are updated, and the final outcome is delivered.</li>
+        </ul>
+
+        <h4 className="text-md font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">2. Specialized Financial Applications</h4>
+        <p className="text-gray-700 dark:text-gray-200">Agentic workflows drive the core functions of the CuvaFin platform:</p>
+        <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
+          <li><strong>Supply Chain Finance:</strong> Orchestrating 3-way matching between purchase orders, invoices, and delivery records to validate financing requests.</li>
+          <li><strong>Wealth Management:</strong> Automating personalized client reporting, portfolio rebalancing, and investment idea generation.</li>
+          <li><strong>Compliance &amp; Risk:</strong> Triggering automated workflows for real-time KYC/AML validation and risk scoring during onboarding.</li>
+        </ul>
+
+        <h4 className="text-md font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">3. Agentic ETL and Intelligence</h4>
+        <p className="text-gray-700 dark:text-gray-200">Workflows are used to build and maintain the platform's "memory":</p>
+        <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
+          <li><strong>Knowledge Ingestion:</strong> Agents perform "Agentic ETL" (Extract, Transform, Load) to retrieve and structure raw data into a usable Knowledge Base.</li>
+          <li><strong>Contextual Reasoning:</strong> Workflows link data into Knowledge Graphs, allowing agents to understand complex financial relationships during execution.</li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">Business Impact</h3>
+        <p className="text-gray-700 dark:text-gray-200">By shifting from manual processes to agentic workflows, financial institutions achieve measurable operational efficiency:</p>
+
+        <div className="mt-4 overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 border">
+            <thead className="bg-gray-50 dark:bg-gray-800">
+              <tr>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Metric</th>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Business Outcome</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">40% Reduction</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Decrease in manual workload as agents handle routine queries and tasks.</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">2x to 3x Faster</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Accelerated client onboarding through automated data collection and setup.</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">50% Faster</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Compliance processing via real-time alerts and automated regulatory checks.</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">2.5x Increase</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Improved client engagement through automated intake and conversational interfaces.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </>
     ),
   },
@@ -627,6 +740,7 @@ const docsContent = {
       </>
     ),
   },
+  
   "available-connectors": {
     heading: "Available connectors",
     body: (
@@ -637,6 +751,138 @@ const docsContent = {
           <li>Cloud storage (AWS S3, Google Drive)</li>
           <li>Custom REST APIs</li>
         </ul>
+      </>
+    ),
+  },
+  "knowledge-systems-keyconcepts": {
+    heading: "Knowledge Systems (Knowledge Base, RAG)",
+    body: (
+      <>
+        <p className="text-gray-700 dark:text-gray-200">
+          Knowledge Systems in Cuva AI act as the platform's advanced "Digital Brain." The foundational layer equips AI agents with the deep, context-aware understanding necessary for sophisticated problem-solving and decision-making. This sophisticated infrastructure is built upon the seamless integration of several core components:
+        </p>
+
+        <h3 className="text-lg font-semibold mt-4 mb-2 text-gray-900 dark:text-gray-100">Agentic ETL (Extract, Transform, Load)</h3>
+        <p className="text-gray-700 dark:text-gray-200">This process is not a static data pipeline but an intelligent, AI-driven mechanism for continuously enriching and updating the Knowledge Bases. Agentic ETL leverages specialized AI agents to autonomously:</p>
+        <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
+          <li>Extract relevant data from diverse and often unstructured sources (e.g., databases, documents, emails, websites).</li>
+          <li>Transform this raw data into a structured, vector-optimized format suitable for efficient retrieval and reasoning by other AI agents. This includes cleaning, normalizing, and vectorizing the content.</li>
+          <li>Load the transformed information into the appropriate Knowledge Bases, ensuring the "Digital Brain" remains current and accurate in real-time.</li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">Agentic RAG (Retrieval-Augmented Generation)</h3>
+        <p className="text-gray-700 dark:text-gray-200">Retrieval-Augmented Generation (RAG) is the powerful technology that makes your Cuva AI agent smart, accurate, and reliable. It acts as a bridge, connecting the AI's core reasoning engine (the Large Language Model) with your organization's verified, deep institutional knowledge.</p>
+        <p className="text-gray-700 dark:text-gray-200">When a Cuva AI agent needs to answer a question or complete a complex task, it uses RAG to ensure its response is grounded in facts, significantly reducing the risk of "hallucinations".</p>
+
+        <h4 className="text-md font-semibold mt-4 mb-2 text-gray-900 dark:text-gray-100">Retrieval: Find the Facts</h4>
+        <p className="text-gray-700 dark:text-gray-200"><strong>Goal:</strong> To quickly locate the most relevant pieces of information from your organization's documents, data, and repository.</p>
+        <p className="text-gray-700 dark:text-gray-200"><strong>Mechanism:</strong> The AI converts the user's query into a unique mathematical signature (a "vector"). It then performs a high-speed vector similarity search across all Knowledge Bases to identify documents or data chunks that are conceptually closest to the query.</p>
+        <p className="text-gray-700 dark:text-gray-200"><strong>Output:</strong> A small, highly relevant set of "snippets" of text/data.</p>
+
+        <h4 className="text-md font-semibold mt-4 mb-2 text-gray-900 dark:text-gray-100">Augmentation: Provide Context</h4>
+        <p className="text-gray-700 dark:text-gray-200"><strong>Goal:</strong> To inject the retrieved facts into the AI's instruction set, creating a factual foundation for the response.</p>
+        <p className="text-gray-700 dark:text-gray-200"><strong>Mechanism:</strong> The retrieved information (the "ground-truth data") is dynamically inserted into the prompt sent to the LLM. The instruction effectively becomes: "Answer the following question ONLY based on this provided context: [Retrieved Snippet 1, Snippet 2, etc.]. Question: [User's Question]"</p>
+        <p className="text-gray-700 dark:text-gray-200"><strong>Impact:</strong> This step augments (enhances) the LLM's input with verified data, forcing it to stick to the facts.</p>
+
+        <h4 className="text-md font-semibold mt-4 mb-2 text-gray-900 dark:text-gray-100">Generation: Synthesize the Answer</h4>
+        <p className="text-gray-700 dark:text-gray-200"><strong>Goal:</strong> To deliver a final, accurate, and coherent answer.</p>
+        <p className="text-gray-700 dark:text-gray-200"><strong>Mechanism:</strong> The LLM uses its linguistic capabilities and reasoning to process the original question alongside the newly supplied factual context.</p>
+        <p className="text-gray-700 dark:text-gray-200"><strong>Result:</strong> A highly accurate, context-aware, and trustworthy output that is directly grounded in your organization data, eliminating guesswork and preventing the AI from generating incorrect or fabricated information.</p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">Knowledge Bases (KBs)</h3>
+        <p className="text-gray-700 dark:text-gray-200">These form the structured and curated repository of domain-specific and organizational intelligence. A Knowledge Base serves as the long-term memory for the AI, storing verified facts, proprietary documents, technical specifications, process flows, and historical data in an optimized format. By indexing this information meticulously, the platform ensures that the AI agents have instant, reliable access to the authoritative information required for their tasks.</p>
+      </>
+    ),
+  },
+  "connectors-kc": {
+    heading: "Connectors",
+    body: (
+      <>
+        <p className="text-gray-700 dark:text-gray-200">
+          Connectors are pre-configured software modules designed to translate the unique data models and API protocols of third-party applications into a standardized format the AI can understand.
+        </p>
+        <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
+          <li><strong>Tailor-Made Integration:</strong> Each connector is purpose-built for a specific app (e.g., Salesforce, SharePoint) to ensure optimized data exchange.</li>
+          <li><strong>Permission-Aware:</strong> They respect your organization's existing security protocols, ensuring agents only access data the user is authorized to see.</li>
+          <li><strong>Unified Access:</strong> They consolidate fragmented data into a single "Digital Handshake," allowing agents to focus on reasoning rather than managing complex API calls.</li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">How We Use Connectors in Cuva AI</h3>
+        <p className="text-gray-700 dark:text-gray-200">Connectors serve as the "hands and eyes" of your AI agents throughout their operational lifecycle:</p>
+        <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
+          <li><strong>Agentic ETL (Data Building):</strong> Agents use connectors to automatically "crawl" enterprise sources like SharePoint or core banking databases. They extract, clean, and load this raw data into your Knowledge Base.</li>
+          <li><strong>Visual Workflow Nodes:</strong> In the AI agent studio, connectors appear as drag-and-drop nodes. A Trigger Node might start an agent when a new email arrives in Outlook, while an Action Node might update a record in a CRM.</li>
+          <li><strong>Real-Time Retrieval (RAG):</strong> When you ask CuvaBot a question, connectors fetch live data from connected systems to ensure the answer is grounded in the most current facts.</li>
+          <li><strong>Task Execution:</strong> Agents use connectors to move beyond simple chat to active work, such as processing an invoice or escalating a support ticket directly in the source system.</li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">Available Connectors</h3>
+        <div className="mt-4 overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 border">
+            <thead className="bg-gray-50 dark:bg-gray-800">
+              <tr>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Category</th>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Available Connectors</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">CRM</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Salesforce, HubSpot, Pipedrive</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Collaboration</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Slack, Microsoft Teams, Asana</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Productivity</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Microsoft Word, Excel, PowerPoint, Google Sheets</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">File Storage</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">OneDrive, Google Drive, SharePoint, Dropbox, FTP</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">E-mail</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Gmail, Outlook, Mailchimp</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Communication</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Zoom, WhatsApp, Webex</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Financial CRM</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">WealthBox, Salesforce, AdvyZon, Advisor Engine</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">KYC / AML</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">LexisNexis, Alloy, Onfido, Jumio, Socure</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Core Banking</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">FIS core banking, FiServ DNA, FiServ Signature, Mambu</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Wealth Management</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">BlackRock Aladdin, SimCorp Dimension, Orion Advisor</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Payments</td>
+                <td className="px-4 py-4 text-gray-700 dark:text-gray-200">PayPal, Stripe, MasterCard, Visa API</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </>
+    ),
+  },
+  "cuvabot-kc": {
+    heading: "CuvaBot",
+    body: (
+      <>
+        <p className="text-gray-700 dark:text-gray-200">
+          CuvaBot is the conversational interface for agents. It allows users to chat with the Knowledge Systems for compliance-ready answers, perform Enterprise Search across all connected systems, and trigger and execute workflows via natural language commands.
+        </p>
       </>
     ),
   },
