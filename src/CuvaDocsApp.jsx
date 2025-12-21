@@ -3,6 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "./lib/utils";
 import Header from "./components/Header";
 import SearchResults from "./SearchResults";
+import AsanaImg from "./assets/Asana.png";
+import ConfluenceImg from "./assets/Confluence.png";
+import ExcelImg from "./assets/Excel.png";
+import GoogleSheetsImg from "./assets/Google_Sheets.png";
+import HubSpotImg from "./assets/HubSpot.png";
+import JiraImg from "./assets/Jira.png";
+import PipedriveImg from "./assets/Pipedrive.png";
+import SalesforceImg from "./assets/Salesforce.png";
+import WordImg from "./assets/Word.png";
 
 // Updated illustrative + semantic icon set (inline SVGs).
 const Icons = {
@@ -173,15 +182,7 @@ const docsSections = [
     title: "Core Platform",
     items: [
       { id: "architecture-overview", label: "Architecture Overview", icon: Icons.Database },
-      {
-        id: "connectors",
-        label: "Connectors",
-        icon: Icons.Connectors,
-        children: [
-          { id: "app-connectors", label: "App Connectors", icon: Icons.Connectors },
-          { id: "financial-connectors", label: "Financial Connectors", icon: Icons.Database },
-        ],
-      },
+      { id: "connectors", label: "Connectors", icon: Icons.Connectors },
       {
         id: "knowledge-systems",
         label: "Knowledge Systems",
@@ -300,6 +301,174 @@ const docsSections = [
 
 // Helpful aliases for navigation ids that should map to existing content
 
+
+function ConnectorsPage() {
+  const [typeTab, setTypeTab] = useState("app");
+
+  // Types of connectors lists (grouped by category)
+  const appGroups = [
+    { category: "CRM", apps: ["Salesforce", "HubSpot", "Pipedrive"] },
+    { category: "Collaboration", apps: ["Jira", "Confluence", "Asana"] },
+    { category: "Productivity", apps: ["Microsoft Word", "Excel", "PowerPoint", "Google Sheets"] },
+    { category: "File Storage", apps: ["OneDrive", "Google Drive", "SharePoint", "Dropbox", "FTP"] },
+    { category: "E-mail", apps: ["Gmail", "Outlook", "Mailchimp"] },
+    { category: "Communication", apps: ["Zoom", "WhatsApp", "Webex"] },
+  ];
+
+  const financialGroups = [
+    { category: "Payments", apps: ["PayPal", "Stripe", "MasterCard", "Visa API"] },
+    { category: "Financial CRM", apps: ["WealthBox", "Salesforce", "AdvyZon", "Advisor Engine"] },
+    { category: "Open Banking", apps: ["Plaid", "Yodlee"] },
+    { category: "KYC / AML", apps: ["LexisNexis", "Alloy", "Onfido", "Jumio", "Socure"] },
+    { category: "Core Banking", apps: ["FIS core banking", "FiServ DNA", "FiServ Signature", "Mambu"] },
+    { category: "Wealth Management", apps: ["BlackRock Aladdin", "SimCorp Dimension", "Orion Advisor"] },
+  ];
+
+  const connectorIcons = {
+    Asana: AsanaImg,
+    Confluence: ConfluenceImg,
+    Excel: ExcelImg,
+    "Google Sheets": GoogleSheetsImg,
+    HubSpot: HubSpotImg,
+    Jira: JiraImg,
+    Pipedrive: PipedriveImg,
+    Salesforce: SalesforceImg,
+    "Microsoft Word": WordImg,
+  };
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Welcome to connectors hub</h2>
+        <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
+          In simple terms, <strong>Cuva Connectors</strong> are digital bridges that allow your AI agent to "talk" to other software and move information safely between them. They work by either "pulling" data from a starting point (the <strong>Source</strong>) or "pushing" it into a final home (the <strong>Destination</strong>). Think of them as translators that take information from different places—like an email, teams, outlook, drive, SharePoint, a spreadsheet, or a database—and reformat it so it is easy for your agent to understand and use to complete tasks.
+        </p>
+      </div>
+
+      
+
+      
+
+      {/* Types of connectors subsection */}
+      <div className="mt-10">
+        <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Types of connectors</h3>
+
+        <div className="border-b border-gray-200 dark:border-gray-700">
+          <nav className="-mb-px flex space-x-8" aria-label="Connector types">
+            <button
+              onClick={() => setTypeTab('app')}
+              className={cn(
+                "whitespace-nowrap py-3 px-2 border-b-2 font-medium text-sm transition-colors",
+                typeTab === 'app'
+                  ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
+              )}
+            >
+              App Connectors
+            </button>
+
+            <button
+              onClick={() => setTypeTab('financial')}
+              className={cn(
+                "whitespace-nowrap py-3 px-2 border-b-2 font-medium text-sm transition-colors",
+                typeTab === 'financial'
+                  ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
+              )}
+            >
+              Financial Connectors
+            </button>
+          </nav>
+        </div>
+
+        <div className="mt-6">
+          {typeTab === 'app' && (
+            <div className="overflow-x-auto">
+              <div className="rounded border bg-white dark:bg-gray-800 p-4">
+                <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">App Connectors</h4>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                    <thead className="bg-gray-50 dark:bg-gray-800">
+                      <tr>
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Connector Name</th>
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Links</th>
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Self-managed</th>
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Cloud</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
+                      {appGroups.flatMap(g => g.apps).map((a, i) => (
+                        <tr key={`app-${i}`}>
+                          <td className="px-4 py-4 align-top font-medium text-gray-900 dark:text-gray-100">
+                            <div className="flex items-center">
+                              <div className="w-8 h-8 rounded-md bg-gray-50 dark:bg-gray-700 flex items-center justify-center border">
+                                {connectorIcons[a] ? (
+                                  <img src={connectorIcons[a]} alt={a} className="w-6 h-6 object-contain" />
+                                ) : (
+                                  <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">{a.split(' ').map(s=>s[0]).slice(0,2).join('')}</span>
+                                )}
+                              </div>
+                              <div className="ml-3">{a}</div>
+                            </div>
+                          </td>
+                          <td className="px-4 py-4 text-gray-700 dark:text-gray-200">{''}</td>
+                          <td className="px-4 py-4 text-gray-700 dark:text-gray-200">{'✅'}</td>
+                          <td className="px-4 py-4 text-gray-700 dark:text-gray-200">{'✅'}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {typeTab === 'financial' && (
+            <div className="overflow-x-auto">
+              <div className="rounded border bg-white dark:bg-gray-800 p-4">
+                <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">Financial Connectors</h4>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                    <thead className="bg-gray-50 dark:bg-gray-800">
+                      <tr>
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Connector Name</th>
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Links</th>
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Self-managed</th>
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Cloud</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
+                      {financialGroups.flatMap(g => g.apps).map((a, i) => (
+                        <tr key={`fin-${i}`}>
+                          <td className="px-4 py-4 align-top font-medium text-gray-900 dark:text-gray-100">
+                            <div className="flex items-center">
+                              <div className="w-8 h-8 rounded-md bg-gray-50 dark:bg-gray-700 flex items-center justify-center border">
+                                {connectorIcons[a] ? (
+                                  <img src={connectorIcons[a]} alt={a} className="w-6 h-6 object-contain" />
+                                ) : (
+                                  <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">{a.split(' ').map(s=>s[0]).slice(0,2).join('')}</span>
+                                )}
+                              </div>
+                              <div className="ml-3">{a}</div>
+                            </div>
+                          </td>
+                          <td className="px-4 py-4 text-gray-700 dark:text-gray-200">{''}</td>
+                          <td className="px-4 py-4 text-gray-700 dark:text-gray-200">{'✅'}</td>
+                          <td className="px-4 py-4 text-gray-700 dark:text-gray-200">{'✅'}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // Content for each section
 const docsContent = {
   welcome: {
@@ -311,24 +480,24 @@ const docsContent = {
         </p>
         <div className="my-4" />
         <p>
-           "From initial setup through to development, this guide has you covered. It's actively maintained and <span className="font-bold"> we invite your </span>  <span className="font-bold text-blue-600 dark:text-blue-400 underline underline-offset-4">contributions</span> to make it even better."
+          "From initial setup through to development, this guide has you covered. It's actively maintained and <span className="font-bold"> we invite your </span>  <span className="font-bold text-blue-600 dark:text-blue-400 underline underline-offset-4">contributions</span> to make it even better."
         </p>
         <div className="mt-6 border rounded p-4 bg-gray-50 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
           <strong>Introduction</strong>
           <div className="mt-3 w-full rounded overflow-hidden border border-gray-200 dark:border-gray-700">
-            <div style={{position: 'relative', paddingTop: '56.25%'}}>
+            <div style={{ position: 'relative', paddingTop: '56.25%' }}>
               <iframe
                 title="Cuva overview"
                 src="https://www.youtube.com/embed/BnquzIGVuKc"
                 loading="lazy"
-                style={{position: 'absolute', top:0, left:0, width:'100%', height:'100%', border:0}}
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
           </div>
         </div>
-       
+
         <div className="mt-6">
           <h2 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">About Cuva</h2>
           <p className="mb-2 text-gray-700 dark:text-gray-200">
@@ -700,47 +869,10 @@ const docsContent = {
     ),
   },
   connectors: {
-    heading: "Connectors: integrations with systems & APIs",
-    body: (
-      <>
-        <p>
-          Connectors are pre-configured software modules designed to translate the unique data models and API protocols of third-party applications into a standardized format the AI can understand.
-        </p>
-        <ul className="list-disc ml-6 mt-3 space-y-1 text-gray-700 dark:text-gray-200">
-          <li><strong>Tailor-Made Integration:</strong> Each connector is purpose-built for a specific app (e.g., Salesforce, SharePoint) to ensure optimized data exchange.</li>
-          <li><strong>Permission-Aware:</strong> They respect your organization's existing security protocols, ensuring agents only access data the user is authorized to see.</li>
-          <li><strong>Unified Access:</strong> They consolidate fragmented data into a single "Digital Handshake," allowing agents to focus on reasoning rather than managing complex API calls.</li>
-        </ul>
-
-        <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">How We Use Connectors in Cuva AI</h3>
-        <p className="text-gray-700 dark:text-gray-200">Connectors serve as the "hands and eyes" of your AI agents throughout their operational lifecycle:</p>
-        <ul className="list-disc ml-6 mt-3 space-y-1 text-gray-700 dark:text-gray-200">
-          <li><strong>Agentic ETL (Data Building):</strong> Agents use connectors to automatically crawl enterprise sources like SharePoint or core banking databases to extract, clean, and load raw data into your Knowledge Base.</li>
-          <li><strong>Visual Workflow Nodes:</strong> In the AI Agent Studio, connectors appear as drag-and-drop nodes. A Trigger Node might start an agent when a new email arrives, while an Action Node might update a CRM record.</li>
-          <li><strong>Real-Time Retrieval (RAG):</strong> When you ask CuvaBot a question, connectors fetch live data from connected systems to ensure answers are grounded in current facts.</li>
-          <li><strong>Task Execution:</strong> Agents use connectors to perform actions in source systems—processing invoices, escalating support tickets, or updating records directly.</li>
-        </ul>
-
-        <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">Available Connectors</h3>
-        <div className="mt-2">
-          <ul className="list-none space-y-2 text-gray-700 dark:text-gray-200">
-            <li><strong>CRM:</strong> Salesforce, HubSpot, Pipedrive</li>
-            <li><strong>Collaboration:</strong> Slack, Microsoft Teams, Asana</li>
-            <li><strong>Productivity:</strong> Microsoft Word, Excel, PowerPoint, Google Sheets</li>
-            <li><strong>File Storage:</strong> OneDrive, Google Drive, SharePoint, Dropbox, FTP</li>
-            <li><strong>E-mail:</strong> Gmail, Outlook, Mailchimp</li>
-            <li><strong>Communication:</strong> Zoom, WhatsApp, Webex</li>
-            <li><strong>Financial CRM:</strong> WealthBox, Salesforce (financial), AdvyZon, Advisor Engine</li>
-            <li><strong>KYC / AML:</strong> LexisNexis, Alloy, Onfido, Jumio, Socure</li>
-            <li><strong>Core Banking:</strong> FIS core banking, FiServ DNA, FiServ Signature, Mambu</li>
-            <li><strong>Wealth Management:</strong> BlackRock Aladdin, SimCorp Dimension, Orion Advisor</li>
-            <li><strong>Payments:</strong> PayPal, Stripe, MasterCard, Visa API</li>
-          </ul>
-        </div>
-      </>
-    ),
+    heading: "Connectors",
+    body: <ConnectorsPage />,
   },
-  
+
   "available-connectors": {
     heading: "Available connectors",
     body: (
@@ -1137,19 +1269,19 @@ function MainContent({ activeId }) {
         transition={{ duration: 0.25 }}
         className="max-w-3xl mx-auto py-12 px-8"
       >
-          {bc ? (
-            <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-              {bc.map((p, i) => (
-                <span key={i}>
-                  {i > 0 && <span className="mx-2">›</span>}
-                  <span className="inline-block">{p}</span>
-                </span>
-              ))}
-            </div>
-          ) : null}
+        {bc ? (
+          <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+            {bc.map((p, i) => (
+              <span key={i}>
+                {i > 0 && <span className="mx-2">›</span>}
+                <span className="inline-block">{p}</span>
+              </span>
+            ))}
+          </div>
+        ) : null}
 
-          <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">{content.heading}</h1>
-          <div className="prose prose-blue max-w-none text-gray-800 dark:text-gray-200">{content.body}</div>
+        <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">{content.heading}</h1>
+        <div className="prose prose-blue max-w-none text-gray-800 dark:text-gray-200">{content.body}</div>
       </motion.div>
     </AnimatePresence>
   );
@@ -1213,7 +1345,7 @@ export default function CuvaDocsApp() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-gray-100">
-        <Header docsIndex={docsIndex} onSelectDoc={handleSelectDoc} onSearch={handleSearch} />
+      <Header docsIndex={docsIndex} onSelectDoc={handleSelectDoc} onSearch={handleSearch} />
 
       <Sidebar
         sections={docsSections}
