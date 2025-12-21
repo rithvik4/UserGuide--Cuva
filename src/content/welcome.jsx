@@ -83,7 +83,7 @@ export default {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="border rounded-lg p-6 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200">
             <div className="flex items-start space-x-4">
-              <div className="p-3 rounded-full bg-pink-50 text-pink-600"><Icons.Workflows className="w-6 h-6" /></div>
+              <div className="p-3 rounded-full bg-blue-50 text-blue-600"><Icons.Workflows className="w-6 h-6" /></div>
               <div className="flex-1">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Workflows</h4>
                 <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">Build reliable, repeatable automations that run the same way every time. Perfect for high-volume, mission-critical tasks.</p>
@@ -104,7 +104,7 @@ export default {
 
           <div className="border rounded-lg p-6 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200">
             <div className="flex items-start space-x-4">
-              <div className="p-3 rounded-full bg-pink-50 text-pink-600"><Icons.Agents className="w-6 h-6" /></div>
+              <div className="p-3 rounded-full bg-blue-50 text-blue-600"><Icons.Agents className="w-6 h-6" /></div>
               <div className="flex-1">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Agents</h4>
                 <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">Create AI assistants that intelligently use your workflows and tools to solve open-ended tasks. Perfect for complex, decision-based work.</p>
