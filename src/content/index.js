@@ -25,6 +25,10 @@ import templates from './templates';
 import sampleUseCases from './sample-use-cases';
 import commonIssues from './common-issues';
 import quickFixes from './quick-fixes';
+import troubleshooting from './troubleshooting';
+import faqs from './faqs';
+import releaseNotes from './release-notes';
+import contactSupport from './contact-support';
 
 const docsContent = {
   welcome,
@@ -54,6 +58,10 @@ const docsContent = {
   'sample-use-cases': sampleUseCases,
   'common-issues': commonIssues,
   'quick-fixes': quickFixes,
+  'troubleshooting': troubleshooting,
+  'faqs': faqs,
+  'release-notes': releaseNotes,
+  'contact-support': contactSupport,
 };
 
 // aliases
