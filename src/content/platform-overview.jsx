@@ -1,9 +1,9 @@
 import React from 'react';
 
 export default {
+   heading: 'Overview',
   body: (
     <div className="prose max-w-none dark:prose-invert space-y-6">
-
       <div>
         <p className="mb-2 text-gray-700 dark:text-gray-200">
           <span className="font-bold"> Cuva </span> is an <span className="font-bold"> Enterprise Agentic Orchestration Platform </span> that transforms complex business operations into autonomous, self-adapting workflows. Moving beyond the limitations of rigid, rule-based RPA, Cuva utilizes a Large Integration Model (LIM) to deploy AI agents that work 24/7 across your entire tech stack. Whether dealing with modern SaaS, on-premise servers, or legacy software, Cuva interfaces seamlessly via both API and UI layers to ensure intelligent, continuous execution across the enterprise.

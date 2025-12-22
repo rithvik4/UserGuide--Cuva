@@ -2,11 +2,9 @@ import welcome from './welcome';
 import platformOverview from './platform-overview';
 import quickstartFirstAgent from './quickstart-first-agent';
 import architectureOverview from './architecture-overview';
-import aiAgents from './ai-agents';
 import agents from './agents';
 import agentCreation from './agent-creation';
 import workflows from './workflows';
-import agenticWorkflows from './agentic-workflows';
 import workflowBuilding from './workflow-building';
 import workflowDesign from './workflow-design';
 import triggers from './triggers';
@@ -15,9 +13,7 @@ import conditionalLogic from './conditional-logic';
 import connectors from './connectors';
 import aboutConnectors from './about-connectors';
 import availableConnectors from './available-connectors';
-import knowledgeSystemsKey from './knowledge-systems-keyconcepts';
-import connectorsKc from './connectors-kc';
-import cuvabotKc from './cuvabot-kc';
+import keyConcepts from './key-concepts';
 import connectorConfig from './connector-config';
 import customConnector from './custom-connector';
 import knowledgebase from './knowledgebase';
@@ -63,12 +59,11 @@ const docsContent = {
   'architecture-overview': architectureOverview,
   'agent-overview': agentsFramework,
   'how-agents-work': howAgentsWork,
-  'ai-agents': aiAgents,
   'all-agents': agents,
   agents,
   'agent-creation': agentCreation,
   workflows,
-  'agentic-workflows': agenticWorkflows,
+  'key-concepts': keyConcepts,
   'workflow-building': workflowBuilding,
   'workflow-design': workflowDesign,
   triggers,
@@ -77,9 +72,7 @@ const docsContent = {
   connectors,
   'about-connectors': aboutConnectors,
   'available-connectors': availableConnectors,
-  'knowledge-systems-keyconcepts': knowledgeSystemsKey,
-  'connectors-kc': connectorsKc,
-  'cuvabot-kc': cuvabotKc,
+  // key concepts consolidated into `key-concepts`
   'connector-config': connectorConfig,
   'custom-connector': customConnector,
   knowledgebase,

@@ -10,22 +10,6 @@ export const docsSections = [
         id: 'key-concepts',
         label: 'Key Concepts',
         icon: Icons.Key,
-        children: [
-          { id: 'ai-agents', label: 'AI Agents', icon: Icons.Agents },
-          { id: 'agentic-workflows', label: 'Agentic Workflows', icon: Icons.Workflows },
-          {
-            id: 'knowledge-systems-keyconcepts',
-            label: 'Knowledge Systems',
-            icon: Icons.KB,
-            children: [
-              { id: 'knowledge-base-kc', label: 'Knowledge Base', icon: Icons.Database },
-              { id: 'knowledge-graph-kc', label: 'Knowledge Graph', icon: Icons.KB },
-              { id: 'rag-kc', label: 'Retrieval Augmented Generation (RAG)', icon: Icons.Search },
-            ],
-          },
-          { id: 'connectors-kc', label: 'Connectors', icon: Icons.Connectors },
-          { id: 'cuvabot-kc', label: 'CuvaBot', icon: Icons.Chat },
-        ],
       },
       { id: 'roles-permissions', label: 'Roles and Permissions', icon: Icons.Shield },
       { id: 'quickstart-first-agent', label: 'Quickstart: Build Your First Agent', icon: Icons.Agents },
