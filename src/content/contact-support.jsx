@@ -2,6 +2,7 @@ import React from 'react';
 
 function ContactCard({ title, children }) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   return (
     <div className="rounded-lg border p-6 bg-white shadow-sm">
       <h4 className="font-semibold mb-2">{title}</h4>
@@ -53,6 +54,8 @@ export default {
     </>
   ),
 =======
+=======
+>>>>>>> Stashed changes
     return (
         <div className="rounded-lg border p-6 bg-white shadow-sm dark:bg-slate-900/50 dark:border-slate-800">
             <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">{title}</h4>
@@ -103,5 +106,8 @@ export default {
             </div>
         </>
     ),
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 };
