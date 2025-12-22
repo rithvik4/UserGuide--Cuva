@@ -99,10 +99,6 @@ export default {
                     <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Mine knowledge bases, tickets, and Slack channels to generate real-time customer satisfaction scores.</p>
                 </div>
             </div>
-
-            <p>
-                By deploying Cuva Agents, an organization effectively automates the "busy work" of data management. This results in significant time savings, a reduction in manual error, and improved outcomes for both internal stakeholders and external customers.
-            </p>
         </>
     ),
 };

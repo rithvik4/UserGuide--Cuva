@@ -5,7 +5,7 @@ export default {
   body: (
     <>
       <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-        Agents are the digital workforce of the Cuva platform. Unlike simple scripts that follow a linear path, Cuva Agents are <strong>autonomous entities</strong> capable of perception, reasoning, and goal-directed action. They don't just move data; they understand it.
+        Agents are the digital workforce in Cuva platform. Unlike simple scripts that follow a linear path, Cuva Agents are <strong>autonomous entities</strong> capable of perception, reasoning, and goal-directed action. They don't just move data; they understand it.
 
 
       </p>
@@ -77,6 +77,16 @@ export default {
         </div>
       </div>
 
+      {/* How are agents useful? */}
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">What can Agents do for you?</h3>
+      <p className="text-gray-700 dark:text-gray-300 mb-4">Agents can help you in numerous ways. They can:</p>
+      <ul className="list-disc leading-relaxed ml-6 space-y-2 text-gray-700 dark:text-gray-300 mb-12">
+        <li>Increase efficiency and help you make decisions</li>
+        <li>Automate repetitive tasks</li>
+        <li>Improve experiences for your customers</li>
+        <li>Gather and analyze data and provide you with summaries</li>
+      </ul>
+
       {/* Real-World Examples */}
       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Real-World Examples</h3>
       <div className="overflow-hidden border border-slate-200 dark:border-slate-800 rounded-lg shadow-sm">
@@ -88,6 +98,10 @@ export default {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 dark:divide-slate-800 bg-white dark:bg-transparent">
+            <tr>
+              <td className="p-4 font-medium text-gray-900 dark:text-white">Invoice Processing</td>
+              <td className="p-4 text-gray-600 dark:text-gray-400">Extracts data from PDF invoices, validates against POs in ERP, and schedules payment or request approvals.</td>
+            </tr>
             <tr>
               <td className="p-4 font-medium text-gray-900 dark:text-white">Growth & Sales</td>
               <td className="p-4 text-gray-600 dark:text-gray-400">Researches high-intent leads and drafts tailored outreach based on their recent company news.</td>
@@ -115,6 +129,9 @@ export default {
           </tbody>
         </table>
       </div>
+      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+        Cuva Agents turn your company’s collective knowledge into active energy. By automating the intricate, repetitive steps of your workday, you empower your team to focus on what humans do best: innovation and connection.
+      </p>
     </>
   ),
 };
