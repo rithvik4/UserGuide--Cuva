@@ -49,7 +49,7 @@ export default {
       </p>
       <div className="my-4" />
       <p>
-        "From initial setup through to development, this guide has you covered. It's actively maintained and <span className="font-bold"> we invite your </span>  <span className="font-bold text-blue-600 dark:text-blue-400 underline underline-offset-4">contributions</span> to make it even better."
+        "Follow this step-by-step walkthrough to configure your system. We’ve broken the process down into manageable stages to ensure a smooth and successful setup. It's actively maintained and <span className="font-bold"> we invite your </span>  <span className="font-bold text-blue-600 dark:text-blue-400 underline underline-offset-4">contributions</span> to make it even better."
       </p>
       <div className="mt-6 border rounded p-4 bg-gray-50 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
         <strong>Introduction</strong>
@@ -67,15 +67,6 @@ export default {
         </div>
       </div>
 
-      <div className="mt-6">
-        <h2 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-gray-100">About Cuva</h2>
-        <p className="mb-2 text-gray-700 dark:text-gray-200">
-          To empower the world's most complex organizations with an <span className="font-bold"> intelligent, autonomous workforce </span> built from AI Agents, driving unprecedented efficiency, operational resilience, and competitive growth.
-        </p>
-        <p className="text-gray-700 dark:text-gray-200">
-          At Cuva AI, we believe the future of enterprise operations is <span className="font-bold">Agentic</span>. Our mission is to provide the platform that makes building, deploying, and managing this AI agent workforce simple, scalable, and secure.
-        </p>
-      </div>
       <div className="mt-10">
         <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">Build AI Automations Without Code</h3>
         <p className="mb-6 text-gray-700 dark:text-gray-200">Cuva AI is your platform for creating powerful automations using <span className="font-semibold">visual workflows</span> and <span className="font-semibold">intelligent agents</span>—no programming required.</p>

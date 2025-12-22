@@ -1,29 +1,50 @@
 import React from 'react';
 
 export default {
-    heading: 'Cuva Agents: Technical & Operational Framework',
     body: (
         <>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-8 mb-4 tracking-tight">Functional Overview</h3>
             <p>
                 A Cuva Agent is an autonomous AI engine engineered to bridge the gap between static information and active execution. While traditional AI relies on human prompts to generate text, a Cuva Agent utilizes a recursive logic loop to observe, reason, and act. By integrating these agents into your stack, you transition from manual data retrieval to automated workflow orchestration.
             </p>
+            <p>
+                Will explore what Cuva Agents are, how they work, and how you can find and use them to automate your daily tasks.
+            </p>
 
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-12 mb-6 tracking-tight">The User Ecosystem</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-                    <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Architects (Builders)</h4>
-                    <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Power users and IT specialists who define logic, connect data sources, and build custom AI experiences to solve bottlenecks.</p>
-                </div>
-                <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-                    <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">End-Users (Consumers)</h4>
-                    <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">The broader workforce interacting with pre-configured agents to accelerate daily output via predefined tasks and automations.</p>
-                </div>
-                <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-                    <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Supervisors (Admins)</h4>
-                    <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Strategic oversight tier managing security governance, permissioning, and monitoring the ROI of automated workflows.</p>
-                </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 mb-12">
+                <a href="/?doc=all-agents" className="block text-inherit !no-underline">
+                    <div className="h-full p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:border-blue-500/30 transition-all hover:shadow-md cursor-pointer group">
+                        <div className="mb-4">
+                            <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14" />
+                                    <path d="M2 20h20" />
+                                    <path d="M14 12v.01" />
+                                </svg>
+                            </span>
+                        </div>
+                        <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Agents introduction</h4>
+                        <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400 no-underline">Explore definitions, roles, and real-world examples of agents.</p>
+                    </div>
+                </a>
+
+                <a href="/?doc=how-agents-work" className="block text-inherit !no-underline">
+                    <div className="h-full p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:border-blue-500/30 transition-all hover:shadow-md cursor-pointer group">
+                        <div className="mb-4">
+                            <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </span>
+                        </div>
+                        <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">How agents work</h4>
+                        <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400 no-underline">Understand the trigger, flow, and action lifecycle phases.</p>
+                    </div>
+                </a>
             </div>
+
+
 
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight">Key Capabilities</h3>
             <div className="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm mb-12">

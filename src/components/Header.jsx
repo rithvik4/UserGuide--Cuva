@@ -116,7 +116,7 @@ export default function Header({ docsIndex = [], onSelectDoc = () => {}, onSearc
             rel="noreferrer"
             className="px-3 py-1.5 text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700"
           >
-            Hub
+            Cuva App Studio
           </a>
 
           <button

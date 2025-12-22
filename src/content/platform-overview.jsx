@@ -1,56 +1,178 @@
 import React from 'react';
 
 export default {
-  heading: 'Overview of the Cuva AI platform',
   body: (
     <div className="prose max-w-none dark:prose-invert space-y-6">
-      <div className="rounded-lg p-6 bg-gradient-to-r from-slate-50 to-white dark:from-gray-900 dark:to-gray-800">
-        <p className="text-lg-leading-relaxed text-gray-800 dark:text-gray-100">
-          Cuva AI is an enterprise-grade AI orchestration platform designed to be the foundational layer for AI-native financial enterprises. By unifying specialized agents, integrated knowledge systems, and domain-specific models, Cuva AI enables financial institutions to automate high-complexity processes, transform client engagement, and achieve unprecedented operational efficiency.
+
+      <div>
+        <p className="mb-2 text-gray-700 dark:text-gray-200">
+          <span className="font-bold"> Cuva </span> is an <span className="font-bold"> Enterprise Agentic Orchestration Platform </span> that transforms complex business operations into autonomous, self-adapting workflows. Moving beyond the limitations of rigid, rule-based RPA, Cuva utilizes a Large Integration Model (LIM) to deploy AI agents that work 24/7 across your entire tech stack. Whether dealing with modern SaaS, on-premise servers, or legacy software, Cuva interfaces seamlessly via both API and UI layers to ensure intelligent, continuous execution across the enterprise.
+        </p>
+        <p className="text-gray-700 dark:text-gray-200">
+          At Cuva AI, we believe the future of enterprise operations is <span className="font-bold">Agentic</span>. Our mission is to provide the platform that makes building, deploying, and managing this AI agent workforce simple, scalable, and secure.
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        <section className="rounded-lg p-4 bg-white dark:bg-gray-900 shadow-sm">
-        <h2 className="text-xl font-semibold mt-0 mb-2 text-gray-900 dark:text-gray-100">1. Agent Orchestration</h2>
-        <p className="text-gray-700 dark:text-gray-200">Cuva AI features a sophisticated orchestration engine that acts as a conductor for specialized AI agents.</p>
-        <ul className="list-disc ml-6 mt-3 space-y-1 text-gray-700 dark:text-gray-200">
-          <li><strong>Specialized Agent Teams:</strong> Deploy teams of agents where each is an expert in a specific task—such as reading documents, updating records, or analyzing risks.</li>
-          <li><strong>Broad Ecosystem Connectivity:</strong> Seamlessly connect agents to your core business apps (CRM, PMS, Slack, Jira) through financial-grade connectors.</li>
-          <li><strong>Dynamic Scaling:</strong> Automate complex client processes and backend workflows to scale operations without a proportional increase in headcount.</li>
-        </ul>
-      </section>
+      <div className="mt-12 space-y-12 mb-12">
+        <div>
+          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">Why Cuva AI?</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl">
+            Enterprise ecosystems are increasingly fragmented across disparate SaaS platforms and legacy databases. Cuva provides a <span className="font-semibold text-blue-600 dark:text-blue-400">Unified Agentic Layer</span> to solve the challenges of data silos, manual process friction, and brittle automation.
+          </p>
+        </div>
 
-        <section className="rounded-lg p-4 bg-white dark:bg-gray-900 shadow-sm">
-        <h2 className="text-xl font-semibold mt-0 mb-2 text-gray-900 dark:text-gray-100">2. Agentic Knowledge Systems</h2>
-        <p className="text-gray-700 dark:text-gray-200">The platform creates a "living" brain for your enterprise by connecting disparate data silos into a unified knowledge graph.</p>
-        <ul className="list-disc ml-6 mt-3 space-y-1 text-gray-700 dark:text-gray-200">
-          <li><strong>Universal Data Integration:</strong> Agents autonomously connect and sync data from SharePoint, Confluence, CRMs, and internal PDFs.</li>
-          <li><strong>Agentic RAG Intelligence:</strong> Using advanced Retrieval-Augmented Generation (RAG), agents produce grounded, explainable insights derived strictly from your trusted internal sources.</li>
-          <li><strong>Contextual Reasoning:</strong> The system performs automated ETL (Extract, Transform, Load) to ensure every agent action is informed by the full context of your enterprise data.</li>
-        </ul>
-      </section>
+        <div className="space-y-8">
+          {/* Feature 1 */}
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-xl">1</div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Autonomous Workflow Discovery</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-3">
+                Traditional automation requires manual process mapping. Cuva utilizes a <strong>Discovery Engine</strong> that analyzes system telemetry and interaction logs to identify high-ROI automation candidates.
+              </p>
+              <div className="bg-slate-50 dark:bg-slate-900/50 border-l-4 border-blue-500 p-3 text-sm text-gray-600 dark:text-gray-400">
+                <strong>Technical Edge:</strong> It maps the "as-is" process state automatically, reducing the discovery phase from weeks to hours.
+              </div>
+            </div>
+          </div>
 
-        <section className="rounded-lg p-4 bg-white dark:bg-gray-900 shadow-sm">
-        <h2 className="text-xl font-semibold mt-0 mb-2 text-gray-900 dark:text-gray-100">3. Expert AI Model Builder</h2>
-        <p className="text-gray-700 dark:text-gray-200">Move beyond general-purpose models with custom intelligence tailored to your specific domain.</p>
-        <ul className="list-disc ml-6 mt-3 space-y-1 text-gray-700 dark:text-gray-200">
-          <li><strong>Domain-Specific Adapters:</strong> Create small, high-performance "Expert Models" that understand your industry's specific terminology and nuances.</li>
-          <li><strong>Agentic Training Workflows:</strong> Use automated workflows to maintain and align these models with your evolving enterprise data.</li>
-          <li><strong>Superior Accuracy:</strong> Expert models are easier to maintain and deliver higher precision for technical tasks than generic, broad-market AI.</li>
-        </ul>
-      </section>
+          {/* Feature 2 */}
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold text-xl">2</div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">The Large Integration Model (LIM) Architecture</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-3">
+                Standard API-based integrations are rigid. Cuva’s LIM-based architecture provides a semantic understanding of software interfaces.
+              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <li className="bg-white dark:bg-slate-900 p-4 rounded border border-slate-200 dark:border-slate-800">
+                  <strong className="block text-indigo-600 dark:text-indigo-400 mb-1">Self-Healing Workflows</strong>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">Unlike scripts that fail when a schema or UI changes, Cuva agents use computer vision and LLM-based element recognition to navigate changes dynamically.</span>
+                </li>
+                <li className="bg-white dark:bg-slate-900 p-4 rounded border border-slate-200 dark:border-slate-800">
+                  <strong className="block text-indigo-600 dark:text-indigo-400 mb-1">Multi-Modal Interaction</strong>
+                  <span className="text-sm text-gray-600 dark:text-gray-400">Agents can toggle between API calls for speed and UI-based actions for legacy systems lacking modern endpoints.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
 
-        <section className="rounded-lg p-4 bg-white dark:bg-gray-900 shadow-sm">
-        <h2 className="text-xl font-semibold mt-0 mb-2 text-gray-900 dark:text-gray-100">4. Enterprise Governance &amp; Compliance</h2>
-        <p className="text-gray-700 dark:text-gray-200">Cuva AI is built for regulated environments where privacy, security, and auditability are non-negotiable.</p>
-        <ul className="list-disc ml-6 mt-3 space-y-1 text-gray-700 dark:text-gray-200">
-          <li><strong>Privacy by Design:</strong> Ensure PII (Personally Identifiable Information) and sensitive data are protected through rigorous access controls and encryption.</li>
-          <li><strong>Actionable Explainability:</strong> Every agent decision is documented and auditable, ensuring "black box" problems are eliminated and actions are regulator-ready.</li>
-          <li><strong>Role-Based Access Control (RBAC):</strong> Manage granular permissions so agents only interact with the data and systems they are authorized to use.</li>
-        </ul>
-      </section>
+          {/* Feature 3 */}
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-xl">3</div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Scalable "Agentic" Connectors</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-3">
+                Cuva provides an extensible framework for connecting the enterprise:
+              </p>
+              <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                <li><strong>Out-of-the-Box (OOTB) Library:</strong> Pre-configured connectors for 500+ standard enterprise tools (GitHub, Jira, SAP, Salesforce).</li>
+                <li><strong>Zero-Code Connector Builder:</strong> A developer-centric interface to wrap proprietary internal APIs into "Agentic Tools" without writing boilerplate integration code.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Feature 4 */}
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold text-xl">4</div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Enterprise-Grade Governance & Security</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-3">
+                Cuva is built on a Zero-Trust Intelligence framework to ensure that AI agents operate safely within the corporate perimeter.
+              </p>
+              <div className="flex flex-col gap-3">
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 w-2 h-2 rounded-full bg-purple-500"></div>
+                  <div>
+                    <strong className="text-gray-900 dark:text-white">Permission Mirroring:</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Cuva dynamically inherits existing RBAC (Role-Based Access Control). An agent cannot retrieve or process data that the authenticated user does not have explicit permission to access at the source.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 w-2 h-2 rounded-full bg-purple-500"></div>
+                  <div>
+                    <strong className="text-gray-900 dark:text-white">Full Execution Traceability:</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Every agent decision is logged in a machine-readable audit trail, providing 100% observability into how data was manipulated.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 5 */}
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex-shrink-0">
+              <div className="w-12 h-12 rounded-lg bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 dark:text-orange-400 font-bold text-xl">5</div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Flexible Deployment & Orchestration</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-3">
+                Cuva fits into your existing infrastructure stack via multiple deployment vectors:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-3 bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-800 rounded">
+                  <strong className="block text-orange-800 dark:text-orange-300 text-sm">Hybrid Orchestration</strong>
+                  <span className="text-xs text-orange-700 dark:text-orange-400">Keep data processing in your private VPC (On-Prem) while managing agent logic in the cloud.</span>
+                </div>
+                <div className="p-3 bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-800 rounded">
+                  <strong className="block text-orange-800 dark:text-orange-300 text-sm">Developer Interfaces</strong>
+                  <span className="text-xs text-orange-700 dark:text-orange-400">Manage via REST APIs, CLI tools, or Terraform Providers for IaC.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Comparison Table */}
+        <div className="mt-16 overflow-hidden border border-slate-200 dark:border-slate-800 rounded-lg shadow-sm">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white font-bold">
+              <tr>
+                <th className="p-4 border-b dark:border-slate-800">Specification</th>
+                <th className="p-4 border-b dark:border-slate-800 text-gray-500 dark:text-gray-400">Legacy Integration (iPaaS/RPA)</th>
+                <th className="p-4 border-b dark:border-slate-800 text-blue-600 dark:text-blue-400">Cuva Agentic Workspace</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+              <tr className="bg-white dark:bg-slate-950">
+                <td className="p-4 font-medium text-slate-900 dark:text-slate-200">Logic Type</td>
+                <td className="p-4 text-slate-600 dark:text-slate-400">Deterministic (If/Then)</td>
+                <td className="p-4 font-bold text-slate-900 dark:text-white">Probabilistic & Context-Aware</td>
+              </tr>
+              <tr className="bg-slate-50/50 dark:bg-slate-900/50">
+                <td className="p-4 font-medium text-slate-900 dark:text-slate-200">Maintenance</td>
+                <td className="p-4 text-slate-600 dark:text-slate-400">High (Breaks on UI/API update)</td>
+                <td className="p-4 font-bold text-slate-900 dark:text-white">Low (Self-healing via LIM)</td>
+              </tr>
+              <tr className="bg-white dark:bg-slate-950">
+                <td className="p-4 font-medium text-slate-900 dark:text-slate-200">Data Access</td>
+                <td className="p-4 text-slate-600 dark:text-slate-400">Keyword/Field matching</td>
+                <td className="p-4 font-bold text-slate-900 dark:text-white">Semantic/Vector Search</td>
+              </tr>
+              <tr className="bg-slate-50/50 dark:bg-slate-900/50">
+                <td className="p-4 font-medium text-slate-900 dark:text-slate-200">Discovery</td>
+                <td className="p-4 text-slate-600 dark:text-slate-400">Manual Business Analysis</td>
+                <td className="p-4 font-bold text-slate-900 dark:text-white">Automated Telemetry Discovery</td>
+              </tr>
+              <tr className="bg-white dark:bg-slate-950">
+                <td className="p-4 font-medium text-slate-900 dark:text-slate-200">Security</td>
+                <td className="p-4 text-slate-600 dark:text-slate-400">Static Credentials</td>
+                <td className="p-4 font-bold text-slate-900 dark:text-white">Dynamic RBAC Inheritance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+
+
 
       <div>
         <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">How It Works</h3>

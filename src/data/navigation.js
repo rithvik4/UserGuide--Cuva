@@ -40,11 +40,20 @@ export const docsSections = [
         label: 'Agents',
         icon: Icons.Agents,
         children: [
-          { id: 'agent-overview', label: 'Agent Overview', icon: Icons.Agents },
-          { id: 'how-agents-work', label: 'How Agents Work', icon: Icons.Workflows },
+          { id: 'agent-overview', label: 'Overview', icon: Icons.Agents },
+          { id: 'all-agents', label: 'Agents', icon: Icons.Agents },
+          { id: 'how-agents-work', label: 'How Agents Works', icon: Icons.Workflows },
         ]
       },
-      { id: 'connectors', label: 'Connectors', icon: Icons.Connectors },
+      {
+        id: 'connectors-parent',
+        label: 'Connectors',
+        icon: Icons.Connectors,
+        children: [
+          { id: 'about-connectors', label: 'About Connectors', icon: Icons.Connectors },
+          { id: 'connectors', label: 'All Connectors', icon: Icons.Connectors }
+        ],
+      },
       {
         id: 'knowledge-systems',
         label: 'Knowledge Systems',
