@@ -26,4 +26,8 @@ export default {
       <p className="mt-6">For full changelogs and migration notes, see your account release emails or contact support for archived release artifacts.</p>
     </>
   ),
+<<<<<<< Updated upstream
 };
+=======
+};
+>>>>>>> Stashed changes

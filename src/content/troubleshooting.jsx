@@ -97,4 +97,8 @@ export default {
       </div>
     </>
   ),
+<<<<<<< Updated upstream
 };
+=======
+};
+>>>>>>> Stashed changes

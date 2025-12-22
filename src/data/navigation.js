@@ -35,6 +35,15 @@ export const docsSections = [
     title: 'Core Platform',
     items: [
       { id: 'architecture-overview', label: 'Architecture Overview', icon: Icons.Database },
+      {
+        id: 'agents',
+        label: 'Agents',
+        icon: Icons.Agents,
+        children: [
+          { id: 'agent-overview', label: 'Agent Overview', icon: Icons.Agents },
+          { id: 'how-agents-work', label: 'How Agents Work', icon: Icons.Workflows },
+        ]
+      },
       { id: 'connectors', label: 'Connectors', icon: Icons.Connectors },
       {
         id: 'knowledge-systems',

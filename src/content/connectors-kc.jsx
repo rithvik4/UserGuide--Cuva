@@ -1,80 +1,76 @@
 import React from 'react';
 
 export default {
-  heading: 'Connectors',
+  heading: 'Connectors: Key Concepts',
   body: (
     <>
-      <p className="text-gray-700 dark:text-gray-200">
+      <p>
         Connectors are pre-configured software modules designed to translate the unique data models and API protocols of third-party applications into a standardized format the AI can understand.
       </p>
-      <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
-        <li><strong>Tailor-Made Integration:</strong> Each connector is purpose-built for a specific app (e.g., Salesforce, SharePoint) to ensure optimized data exchange.</li>
-        <li><strong>Permission-Aware:</strong> They respect your organization's existing security protocols, ensuring agents only access data the user is authorized to see.</li>
-        <li><strong>Unified Access:</strong> They consolidate fragmented data into a single "Digital Handshake," allowing agents to focus on reasoning rather than managing complex API calls.</li>
+      <ul className="space-y-4 my-8">
+        <li className="flex items-start gap-3">
+          <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+            <strong className="text-gray-900 dark:text-white">Tailor-Made Integration:</strong> Purpose-built for specific apps (e.g., Salesforce, SharePoint) to ensure optimized data exchange.
+          </div>
+        </li>
+        <li className="flex items-start gap-3">
+          <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+            <strong className="text-gray-900 dark:text-white">Permission-Aware:</strong> Respect organization-level security protocols, ensuring authorized data access only.
+          </div>
+        </li>
       </ul>
 
-      <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">How We Use Connectors in Cuva AI</h3>
-      <p className="text-gray-700 dark:text-gray-200">Connectors serve as the "hands and eyes" of your AI agents throughout their operational lifecycle:</p>
-      <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
-        <li><strong>Agentic ETL (Data Building):</strong> Agents use connectors to automatically "crawl" enterprise sources like SharePoint or core banking databases. They extract, clean, and load this raw data into your Knowledge Base.</li>
-        <li><strong>Visual Workflow Nodes:</strong> In the AI agent studio, connectors appear as drag-and-drop nodes. A Trigger Node might start an agent when a new email arrives in Outlook, while an Action Node might update a record in a CRM.</li>
-        <li><strong>Real-Time Retrieval (RAG):</strong> When you ask CuvaBot a question, connectors fetch live data from connected systems to ensure the answer is grounded in the most current facts.</li>
-        <li><strong>Task Execution:</strong> Agents use connectors to move beyond simple chat to active work, such as processing an invoice or escalating a support ticket directly in the source system.</li>
-      </ul>
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-12 mb-6 tracking-tight">How We Use Connectors</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative group hover:border-blue-500/30 transition-colors">
+          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Agentic ETL</h4>
+          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Agents "crawl" enterprise sources to extract, clean, and load data into your Knowledge Base.</p>
+        </div>
+        <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative group hover:border-purple-500/30 transition-colors">
+          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Visual Workflow Nodes</h4>
+          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Drag-and-drop nodes in the AI agent studio to trigger flows (e.g., on new email) or execute actions.</p>
+        </div>
+        <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative group hover:border-green-500/30 transition-colors">
+          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Real-Time Retrieval</h4>
+          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Fetch live data from connected systems to ensure agentic responses are grounded in current facts.</p>
+        </div>
+        <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative group hover:border-orange-500/30 transition-colors">
+          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Task Execution</h4>
+          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Agents move beyond chat to active work, like processing an invoice directly in the source system.</p>
+        </div>
+      </div>
 
-      <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">Available Connectors</h3>
-      <div className="mt-4 overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 border">
-          <thead className="bg-gray-50 dark:bg-gray-800">
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight">Available Connectors</h3>
+      <div className="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm mb-12">
+        <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-800">
+          <thead className="bg-slate-50 dark:bg-slate-900/50">
             <tr>
-              <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Category</th>
-              <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Available Connectors</th>
+              <th scope="col" className="px-6 py-4 text-left text-[11px] font-bold text-slate-500 uppercase tracking-widest">Category</th>
+              <th scope="col" className="px-6 py-4 text-left text-[11px] font-bold text-slate-500 uppercase tracking-widest">Available Connectors</th>
             </tr>
           </thead>
-          <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="bg-white dark:bg-slate-900/20 divide-y divide-slate-200 dark:divide-slate-800">
             <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">CRM</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Salesforce, HubSpot, Pipedrive</td>
+              <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">CRM</td>
+              <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Salesforce, HubSpot, Pipedrive</td>
             </tr>
             <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Collaboration</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Slack, Microsoft Teams, Asana</td>
+              <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">Collaboration</td>
+              <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Slack, Microsoft Teams, Asana</td>
             </tr>
             <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Productivity</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Microsoft Word, Excel, PowerPoint, Google Sheets</td>
+              <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">Productivity</td>
+              <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Microsoft Word, Excel, PowerPoint, Google Sheets</td>
             </tr>
             <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">File Storage</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">OneDrive, Google Drive, SharePoint, Dropbox, FTP</td>
+              <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">File Storage</td>
+              <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">OneDrive, Google Drive, SharePoint, Dropbox, FTP</td>
             </tr>
             <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">E-mail</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Gmail, Outlook, Mailchimp</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Communication</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Zoom, WhatsApp, Webex</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Financial CRM</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">WealthBox, Salesforce, AdvyZon, Advisor Engine</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">KYC / AML</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">LexisNexis, Alloy, Onfido, Jumio, Socure</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Core Banking</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">FIS core banking, FiServ DNA, FiServ Signature, Mambu</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Wealth Management</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">BlackRock Aladdin, SimCorp Dimension, Orion Advisor</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">Payments</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">PayPal, Stripe, MasterCard, Visa API</td>
+              <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">Finance</td>
+              <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">PayPal, Stripe, Plaid, WealthBox, LexisNexis, Mambu</td>
             </tr>
           </tbody>
         </table>

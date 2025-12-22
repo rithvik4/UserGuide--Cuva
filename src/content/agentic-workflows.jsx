@@ -4,76 +4,74 @@ export default {
   heading: 'Agentic Workflows',
   body: (
     <>
-      <p className="text-gray-700 dark:text-gray-200">
-        Agentic Workflows are the dynamic operational framework of the Cuva AI platform. Unlike traditional, linear automation, agentic workflows enable AI agents to orchestrate complex processes by making autonomous decisions, adapting to real-time data, and collaborating to reach a specific financial goal.
+      <p>
+        Agentic Workflows are the dynamic operational framework of the Cuva AI platform. Unlike traditional, linear automation, agentic workflows enable AI agents to orchestrate complex processes by making autonomous decisions.
       </p>
 
-      <h3 className="text-lg font-semibold mt-4 mb-2 text-gray-900 dark:text-gray-100">What are Agentic Workflows?</h3>
-      <p className="text-gray-700 dark:text-gray-200">
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-10 mb-6 tracking-tight">Dynamic vs. Static Automation</h3>
+      <p>
         An agentic workflow is a self-correcting process where intelligence is embedded into every step of execution. These workflows are defined by:
       </p>
-      <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
-        <li><strong>Autonomous Decision-Making:</strong> Agents analyze the context of a task—such as buyer-supplier relationships or contract terms—to determine the best next action.</li>
-        <li><strong>Multi-Agent Collaboration:</strong> Different specialized agents (e.g., KYC, AML, and Risk agents) work together, passing data and results between nodes to complete a high-level objective.</li>
-        <li><strong>Reasoning and Adaptability:</strong> The workflow can branch or iterate based on results, allowing agents to solve open-ended tasks that rigid, traditional scripts cannot handle.</li>
+      <ul className="space-y-4 my-8">
+        <li className="flex items-start gap-3">
+          <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+            <strong className="text-gray-900 dark:text-white">Autonomous Decision-Making:</strong> Agents analyze context—such as buyer-supplier relationships—to determine the best next action.
+          </div>
+        </li>
+        <li className="flex items-start gap-3">
+          <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+            <strong className="text-gray-900 dark:text-white">Multi-Agent Collaboration:</strong> Specialized agents (KYC, Risk, etc.) work together, passing data between nodes to complete high-level objectives.
+          </div>
+        </li>
+        <li className="flex items-start gap-3">
+          <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+            <strong className="text-gray-900 dark:text-white">Reasoning and Adaptability:</strong> The workflow branches and iterates based on results, solving open-ended tasks that rigid scripts cannot handle.
+          </div>
+        </li>
       </ul>
 
-      <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">How Cuva AI Uses Agentic Workflows</h3>
-      <p className="text-gray-700 dark:text-gray-200">Cuva AI leverages these workflows to transform manual financial operations into high-speed, AI-native processes.</p>
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-12 mb-8 tracking-tight">Core Applications</h3>
 
-      <h4 className="text-md font-semibold mt-4 mb-2 text-gray-900 dark:text-gray-100">1. Visual Orchestration in the AI Agent Studio</h4>
-      <p className="text-gray-700 dark:text-gray-200">Technical users design workflows using a visual interface that eliminates the need for complex coding:</p>
-      <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
-        <li><strong>Trigger Agents:</strong> Define what initiates the flow, such as a new invoice upload, an API call, a schedule, or a manual command via CuvaBot.</li>
-        <li><strong>Logic Configuration:</strong> Users assemble agent logic tailored to specific needs, such as defining risk thresholds or routing rules.</li>
-        <li><strong>Terminator Agents:</strong> These agents finalize the workflow, ensuring the task is closed, systems are updated, and the final outcome is delivered.</li>
-      </ul>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Supply Chain Finance</h4>
+          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Orchestrating 3-way matching between POs, invoices, and delivery records to validate financing requests.</p>
+        </div>
+        <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Wealth Management</h4>
+          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Automating personalized client reporting, portfolio rebalancing, and investment idea generation.</p>
+        </div>
+        <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Compliance & Risk</h4>
+          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Real-time KYC/AML validation and risk scoring during client onboarding processes.</p>
+        </div>
+        <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Agentic ETL</h4>
+          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Intelligent data ingestion pipelines that structure raw information into usable enterprise knowledge.</p>
+        </div>
+      </div>
 
-      <h4 className="text-md font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">2. Specialized Financial Applications</h4>
-      <p className="text-gray-700 dark:text-gray-200">Agentic workflows drive the core functions of the CuvaFin platform:</p>
-      <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
-        <li><strong>Supply Chain Finance:</strong> Orchestrating 3-way matching between purchase orders, invoices, and delivery records to validate financing requests.</li>
-        <li><strong>Wealth Management:</strong> Automating personalized client reporting, portfolio rebalancing, and investment idea generation.</li>
-        <li><strong>Compliance &amp; Risk:</strong> Triggering automated workflows for real-time KYC/AML validation and risk scoring during onboarding.</li>
-      </ul>
-
-      <h4 className="text-md font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">3. Agentic ETL and Intelligence</h4>
-      <p className="text-gray-700 dark:text-gray-200">Workflows are used to build and maintain the platform's "memory":</p>
-      <ul className="list-disc ml-6 mt-3 space-y-2 text-gray-700 dark:text-gray-200">
-        <li><strong>Knowledge Ingestion:</strong> Agents perform "Agentic ETL" (Extract, Transform, Load) to retrieve and structure raw data into a usable Knowledge Base.</li>
-        <li><strong>Contextual Reasoning:</strong> Workflows link data into Knowledge Graphs, allowing agents to understand complex financial relationships during execution.</li>
-      </ul>
-
-      <h3 className="text-lg font-semibold mt-6 mb-2 text-gray-900 dark:text-gray-100">Business Impact</h3>
-      <p className="text-gray-700 dark:text-gray-200">By shifting from manual processes to agentic workflows, financial institutions achieve measurable operational efficiency:</p>
-
-      <div className="mt-4 overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 border">
-          <thead className="bg-gray-50 dark:bg-gray-800">
-            <tr>
-              <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Metric</th>
-              <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Business Outcome</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
-            <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">40% Reduction</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Decrease in manual workload as agents handle routine queries and tasks.</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">2x to 3x Faster</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Accelerated client onboarding through automated data collection and setup.</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">50% Faster</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Compliance processing via real-time alerts and automated regulatory checks.</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-4 font-semibold text-gray-900 dark:text-gray-100">2.5x Increase</td>
-              <td className="px-4 py-4 text-gray-700 dark:text-gray-200">Improved client engagement through automated intake and conversational interfaces.</td>
-            </tr>
-          </tbody>
-        </table>
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight">Business Impact</h3>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="p-6 bg-blue-500/5 dark:bg-blue-500/10 rounded-2xl border border-blue-100 dark:border-blue-900/20 text-center">
+          <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-1">40%</div>
+          <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Workload Decrease</div>
+        </div>
+        <div className="p-6 bg-purple-500/5 dark:bg-purple-500/10 rounded-2xl border border-purple-100 dark:border-purple-900/20 text-center">
+          <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-1">3X</div>
+          <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Faster Onboarding</div>
+        </div>
+        <div className="p-6 bg-green-500/5 dark:bg-green-500/10 rounded-2xl border border-green-100 dark:border-green-900/20 text-center">
+          <div className="text-2xl font-bold text-green-600 dark:text-green-400 mb-1">50%</div>
+          <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Faster Compliance</div>
+        </div>
+        <div className="p-6 bg-orange-500/5 dark:bg-orange-500/10 rounded-2xl border border-orange-100 dark:border-orange-900/20 text-center">
+          <div className="text-2xl font-bold text-orange-600 dark:text-orange-400 mb-1">2.5X</div>
+          <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">More Engagement</div>
+        </div>
       </div>
     </>
   ),

@@ -44,127 +44,81 @@ function ConnectorsPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-10">
       <div>
-        <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Welcome to connectors hub</h2>
-        <p className="text-gray-700 dark:text-gray-200 leading-relaxed">
-          In simple terms, <strong>Cuva Connectors</strong> are digital bridges that allow your AI agent to "talk" to other software and move information safely between them. They work by either "pulling" data from a starting point (the <strong>Source</strong>) or "pushing" it into a final home (the <strong>Destination</strong>). Think of them as translators that take information from different places—like an email, teams, outlook, drive, SharePoint, a spreadsheet, or a database—and reformat it so it is easy for your agent to understand and use to complete tasks.
+        <p>
+          Cuva Connectors are digital bridges that allow your AI agent to "talk" to other software and move information safely between them. They work by either "pulling" data from a starting point (the <strong>Source</strong>) or "pushing" it into a final home (the <strong>Destination</strong>).
         </p>
       </div>
 
-      <div className="mt-10">
-        <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Types of connectors</h3>
+      <div>
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Ecosystem Directory</h3>
 
-        <div className="border-b border-gray-200 dark:border-gray-700">
-          <nav className="-mb-px flex space-x-8" aria-label="Connector types">
-            <button
-              onClick={() => setTypeTab('app')}
-              className={cn(
-                "whitespace-nowrap py-3 px-2 border-b-2 font-medium text-sm transition-colors",
-                typeTab === 'app'
-                  ? 'border-blue-500 text-blue-600 dark:text-blue-400'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
-              )}
-            >
-              App Connectors
-            </button>
-
-            <button
-              onClick={() => setTypeTab('financial')}
-              className={cn(
-                "whitespace-nowrap py-3 px-2 border-b-2 font-medium text-sm transition-colors",
-                typeTab === 'financial'
-                  ? 'border-blue-500 text-blue-600 dark:text-blue-400'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300'
-              )}
-            >
-              Financial Connectors
-            </button>
-          </nav>
+        <div className="bg-slate-50 dark:bg-slate-900/40 p-1 rounded-xl w-fit flex gap-1 mb-8">
+          <button
+            onClick={() => setTypeTab('app')}
+            className={cn(
+              "px-6 py-2 rounded-lg text-sm font-bold transition-all duration-200",
+              typeTab === 'app'
+                ? "bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow-sm"
+                : "text-slate-500 hover:text-slate-900 dark:hover:text-slate-200"
+            )}
+          >
+            App Connectors
+          </button>
+          <button
+            onClick={() => setTypeTab('financial')}
+            className={cn(
+              "px-6 py-2 rounded-lg text-sm font-bold transition-all duration-200",
+              typeTab === 'financial'
+                ? "bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow-sm"
+                : "text-slate-500 hover:text-slate-900 dark:hover:text-slate-200"
+            )}
+          >
+            Financial Connectors
+          </button>
         </div>
 
-        <div className="mt-6">
-          {typeTab === 'app' && (
-            <div className="overflow-x-auto">
-              <div className="rounded border bg-white dark:bg-gray-800 p-4">
-                <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">App Connectors</h4>
-                <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                    <thead className="bg-gray-50 dark:bg-gray-800">
-                      <tr>
-                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Connector Name</th>
-                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Links</th>
-                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Self-managed</th>
-                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Cloud</th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
-                      {appGroups.flatMap(g => g.apps).map((a, i) => (
-                        <tr key={`app-${i}`}>
-                          <td className="px-4 py-4 align-top font-medium text-gray-900 dark:text-gray-100">
-                            <div className="flex items-center">
-                              <div className="w-8 h-8 rounded-md bg-gray-50 dark:bg-gray-700 flex items-center justify-center border">
-                                {connectorIcons[a] ? (
-                                  <img src={connectorIcons[a]} alt={a} className="w-6 h-6 object-contain" />
-                                ) : (
-                                  <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">{a.split(' ').map(s=>s[0]).slice(0,2).join('')}</span>
-                                )}
-                              </div>
-                              <div className="ml-3">{a}</div>
-                            </div>
-                          </td>
-                          <td className="px-4 py-4 text-gray-700 dark:text-gray-200">{''}</td>
-                          <td className="px-4 py-4 text-gray-700 dark:text-gray-200">{'✅'}</td>
-                          <td className="px-4 py-4 text-gray-700 dark:text-gray-200">{'✅'}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {typeTab === 'financial' && (
-            <div className="overflow-x-auto">
-              <div className="rounded border bg-white dark:bg-gray-800 p-4">
-                <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">Financial Connectors</h4>
-                <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                    <thead className="bg-gray-50 dark:bg-gray-800">
-                      <tr>
-                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Connector Name</th>
-                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Links</th>
-                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Self-managed</th>
-                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300">Cloud</th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
-                      {financialGroups.flatMap(g => g.apps).map((a, i) => (
-                        <tr key={`fin-${i}`}>
-                          <td className="px-4 py-4 align-top font-medium text-gray-900 dark:text-gray-100">
-                            <div className="flex items-center">
-                              <div className="w-8 h-8 rounded-md bg-gray-50 dark:bg-gray-700 flex items-center justify-center border">
-                                {connectorIcons[a] ? (
-                                  <img src={connectorIcons[a]} alt={a} className="w-6 h-6 object-contain" />
-                                ) : (
-                                  <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">{a.split(' ').map(s=>s[0]).slice(0,2).join('')}</span>
-                                )}
-                              </div>
-                              <div className="ml-3">{a}</div>
-                            </div>
-                          </td>
-                          <td className="px-4 py-4 text-gray-700 dark:text-gray-200">{''}</td>
-                          <td className="px-4 py-4 text-gray-700 dark:text-gray-200">{'✅'}</td>
-                          <td className="px-4 py-4 text-gray-700 dark:text-gray-200">{'✅'}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          )}
+        <div className="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+          <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-800">
+            <thead className="bg-slate-50 dark:bg-slate-900/50">
+              <tr>
+                <th scope="col" className="px-6 py-4 text-left text-[11px] font-bold text-slate-500 uppercase tracking-widest">Connector Name</th>
+                <th scope="col" className="px-6 py-4 text-left text-[11px] font-bold text-slate-500 uppercase tracking-widest hidden md:table-cell">Links</th>
+                <th scope="col" className="px-6 py-4 text-center text-[11px] font-bold text-slate-500 uppercase tracking-widest">Self-Managed</th>
+                <th scope="col" className="px-6 py-4 text-center text-[11px] font-bold text-slate-500 uppercase tracking-widest">Cloud</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white dark:bg-slate-900/20 divide-y divide-slate-200 dark:divide-slate-800">
+              {(typeTab === 'app' ? appGroups : financialGroups).flatMap(g => g.apps).map((a, i) => (
+                <tr key={`${typeTab}-${i}`} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/10 transition-colors">
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="flex items-center gap-4">
+                      <div className="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center overflow-hidden">
+                        {connectorIcons[a] ? (
+                          <img src={connectorIcons[a]} alt={a} className="w-6 h-6 object-contain" />
+                        ) : (
+                          <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400">{a.split(' ').map(s => s[0]).slice(0, 2).join('')}</span>
+                        )}
+                      </div>
+                      <span className="text-[14px] font-bold text-gray-900 dark:text-white">{a}</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-[13px] text-slate-500 dark:text-slate-400 hidden md:table-cell">-</td>
+                  <td className="px-6 py-4 text-center">
+                    <div className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-green-500/10 text-green-600 dark:text-green-500">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-center">
+                    <div className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-green-500/10 text-green-600 dark:text-green-500">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

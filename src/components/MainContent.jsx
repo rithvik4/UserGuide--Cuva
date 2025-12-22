@@ -49,8 +49,10 @@ export default function MainContent({ activeId }) {
           </div>
         ) : null}
 
-        <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">{content.heading}</h1>
-        <div className="prose prose-blue max-w-none text-gray-800 dark:text-gray-200">{content.body}</div>
+        <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight">{content.heading}</h1>
+        <div className="prose prose-blue max-w-none">
+          {content.body}
+        </div>
       </motion.div>
     </AnimatePresence>
   );
