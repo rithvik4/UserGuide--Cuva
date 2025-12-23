@@ -1,61 +1,70 @@
 import React from 'react';
 
 export default {
-    heading: 'Conversational Queries',
+    // heading: 'Conversational Queries',
     body: (
         <>
-            <p className="mb-10 text-gray-500">Interact with your enterprise data through a natural language interface that understands context, identifies nuances, and provides citation-backed answers.</p>
-
-            <div className="space-y-8">
-                <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Natural Language Reasoning</h3>
-                    <p className="text-[14px] leading-relaxed text-gray-500 dark:text-gray-400 mb-6">
-                        CuvaBot doesn't just match keywords; it reasons through your query. Whether you're asking for a summary of a 50-page legal contract or comparing quarterly performance metrics, the bot analyzes the intent behind your words.
+            <>
+                <div className="mb-12">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">What is Cuvabot?</h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-10">
+                        <strong>Cuvabot</strong> is the unified chat interface for the Cuva AI platform. Acting as the "Central Nervous System," it allows users to interact with their enterprise data, trigger complex agents, and manage workflows using natural language. It understands context, identifies nuances, and provides citation-backed answers.
                     </p>
-                    <div className="bg-blue-500/5 border-l-4 border-blue-500 p-4">
-                        <p className="text-[13px] italic text-blue-700 dark:text-blue-400">
-                            "Compare our current ESG policy with the 2023 version and highlight the three most significant changes in reporting requirements."
-                        </p>
-                    </div>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm">
-                        <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-3">Citation-Backed Truth</h4>
-                        <p className="text-[13.5px] leading-relaxed text-gray-500 dark:text-gray-400">
-                            Every answer provided by CuvaBot includes precise citations. Click on a reference to see the exact paragraph and document source, eliminating hallucinations and ensuring total data transparency.
-                        </p>
-                    </div>
-                    <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm">
-                        <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-3">Multi-Turn Context</h4>
-                        <p className="text-[13.5px] leading-relaxed text-gray-500 dark:text-gray-400">
-                            The bot maintains a persistent memory of your conversation. You can ask follow-up questions like "Can you explain that second point in more detail?" without re-stating the entire context.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="p-8 border border-slate-100 dark:border-slate-800">
-                    <h3 className="text-[15px] font-bold text-gray-900 dark:text-white mb-4 uppercase tracking-widest">Key Capabilities</h3>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <li className="flex items-center gap-3 text-[13.5px] text-gray-600 dark:text-gray-400">
-                            <div className="w-1.5 h-1.5 bg-blue-500"></div>
-                            Automated Document Summarization
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Conversational Intelligence</h3>
+                    <ul className="space-y-6">
+                        <li className="flex gap-4">
+                            <div className="mt-1.5 min-w-[6px] h-1.5 w-1.5 rounded-full bg-blue-500"></div>
+                            <div>
+                                <strong className="block text-gray-900 dark:text-white mb-1">Natural Language Reasoning</strong>
+                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    Cuvabot doesn't just match keywords; it reasons through your query. Whether you're asking for a summary of a 50-page legal contract or comparing quarterly performance metrics, the bot analyzes the intent behind your words.
+                                </p>
+                            </div>
                         </li>
-                        <li className="flex items-center gap-3 text-[13.5px] text-gray-600 dark:text-gray-400">
-                            <div className="w-1.5 h-1.5 bg-blue-500"></div>
-                            Cross-Document Data Synthesis
+                        <li className="flex gap-4">
+                            <div className="mt-1.5 min-w-[6px] h-1.5 w-1.5 rounded-full bg-blue-500"></div>
+                            <div>
+                                <strong className="block text-gray-900 dark:text-white mb-1">Citation-Backed Truth</strong>
+                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    Every answer provided by Cuvabot includes precise citations. You can verify the exact paragraph and document source, eliminating hallucinations and ensuring total data transparency.
+                                </p>
+                            </div>
                         </li>
-                        <li className="flex items-center gap-3 text-[13.5px] text-gray-600 dark:text-gray-400">
-                            <div className="w-1.5 h-1.5 bg-blue-500"></div>
-                            Multi-Language Translation & Support
-                        </li>
-                        <li className="flex items-center gap-3 text-[13.5px] text-gray-600 dark:text-gray-400">
-                            <div className="w-1.5 h-1.5 bg-blue-500"></div>
-                            Real-time Fact Checking
+                        <li className="flex gap-4">
+                            <div className="mt-1.5 min-w-[6px] h-1.5 w-1.5 rounded-full bg-blue-500"></div>
+                            <div>
+                                <strong className="block text-gray-900 dark:text-white mb-1">Multi-Turn Context</strong>
+                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    The bot maintains a persistent memory of your conversation. You can ask follow-up questions like "Can you explain that second point in more detail?" without re-stating the entire context.
+                                </p>
+                            </div>
                         </li>
                     </ul>
+
+                    <div className="mt-10 border-t border-slate-200 dark:border-slate-800 pt-8">
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-md">Key Capabilities</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6">
+                            <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
+                                <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
+                                Automated Document Summarization
+                            </div>
+                            <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
+                                <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
+                                Cross-Document Data Synthesis
+                            </div>
+                            <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
+                                <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
+                                Multi-Language Translation & Support
+                            </div>
+                            <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400">
+                                <span className="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
+                                Real-time Fact Checking
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </>
         </>
     ),
 };

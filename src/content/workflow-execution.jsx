@@ -1,56 +1,58 @@
 import React from 'react';
 
 export default {
-    heading: 'Workflow Execution',
+    // heading: 'Workflow Execution',
     body: (
         <>
-            <p className="mb-10 text-gray-500">Transform conversations into actions. Directly trigger complex agentic workflows and multi-step processes through the CuvaBot interface.</p>
-
-            <div className="space-y-8">
-                <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Intent-Driven Automation</h3>
-                    <p className="text-[14px] leading-relaxed text-gray-500 dark:text-gray-400 mb-8">
-                        Simply state your goal, and CuvaBot will identify the correct workflow to execute. From processing an invoice to running a multi-agent risk assessment, everything is accessible via chat.
+            <>
+                <div className="mb-12">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Intent-Driven Automation</h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
+                        Transform conversations into actions. Simply state your goal, and Cuvabot will identify the correct workflow to execute. From processing an invoice to running a multi-agent risk assessment, everything is accessible via chat.
                     </p>
 
-                    <div className="space-y-4">
-                        <div className="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-                            <div className="w-8 h-8 flex-shrink-0 bg-blue-600 text-white flex items-center justify-center font-bold text-[12px]">U</div>
-                            <p className="text-[13.5px] text-gray-700 dark:text-gray-200">"Run a compliance check on the Acme Corp document I just uploaded and notify the risk team of any conflicts."</p>
-                        </div>
-                        <div className="flex items-start gap-4 p-4 bg-blue-500/5 border border-blue-500/10">
-                            <div className="w-8 h-8 flex-shrink-0 bg-slate-800 text-white flex items-center justify-center font-bold text-[12px]">C</div>
-                            <p className="text-[13.5px] text-blue-800 dark:text-blue-300 font-medium">"I've identified the **Compliance Validation Workflow**. Starting extraction and cross-referencing against our 2024 policy. I will update you in real-time."</p>
-                        </div>
-                    </div>
-                </div>
+                    <ul className="space-y-6">
+                        <li className="flex gap-4">
+                            <div className="mt-1.5 min-w-[6px] h-1.5 w-1.5 rounded-full bg-blue-500"></div>
+                            <div>
+                                <strong className="block text-gray-900 dark:text-white mb-1">In-Chat Approvals</strong>
+                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    When an agent reaches a human-in-the-loop (HITL) node, it will present the options directly in the chat. Approve, deny, or provide feedback without leaving the conversation.
+                                </p>
+                            </div>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="mt-1.5 min-w-[6px] h-1.5 w-1.5 rounded-full bg-blue-500"></div>
+                            <div>
+                                <strong className="block text-gray-900 dark:text-white mb-1">Live Progress Tracking</strong>
+                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    See exactly what the agent is doing at any moment. Cuvabot provides a live status feed—"Extracting text," "Reasoning," "Generating draft"—directly in the chat bubble.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm">
-                        <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-3">In-Chat Approvals</h4>
-                        <p className="text-[13.5px] leading-relaxed text-gray-500 dark:text-gray-400">
-                            When an agent reaches a human-in-the-loop (HITL) node, it will present the options directly in the chat. Approve, deny, or provide feedback without leaving the conversation.
-                        </p>
-                    </div>
-                    <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm">
-                        <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-3">Live Progress Tracking</h4>
-                        <p className="text-[13.5px] leading-relaxed text-gray-500 dark:text-gray-400">
-                            See exactly what the agent is doing at any moment. CuvaBot provides a live status feed—"Extracting text," "Reasoning," "Generating draft"—directly in the chat bubble.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="p-8 border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/20">
-                    <h3 className="text-[13px] font-bold text-slate-500 uppercase tracking-widest mb-6 text-center">Execution Lifecycle</h3>
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <div className="p-4 border border-slate-200 dark:border-slate-700 w-full text-center text-[12px] font-bold bg-white dark:bg-slate-900">1. IDENTIFY INTENT</div>
-                        <div className="hidden md:block text-slate-300">→</div>
-                        <div className="p-4 border border-slate-200 dark:border-slate-700 w-full text-center text-[12px] font-bold bg-white dark:bg-slate-900">2. RUN AGENTS</div>
-                        <div className="hidden md:block text-slate-300">→</div>
-                        <div className="p-4 border border-slate-200 dark:border-slate-700 w-full text-center text-[12px] font-bold bg-white dark:bg-slate-900">3. DELIVER OUTPUT</div>
+                    <div className="mt-10 pt-8 border-t border-slate-200 dark:border-slate-800">
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-6 text-sm uppercase tracking-widest text-center">Execution Lifecycle</h4>
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+                            <div className="px-6 py-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-800">
+                                <span className="block text-xs font-bold text-blue-600 mb-1">STEP 1</span>
+                                <span className="text-sm font-bold text-gray-900 dark:text-white">Identify Intent</span>
+                            </div>
+                            <div className="text-gray-300 dark:text-gray-600">→</div>
+                            <div className="px-6 py-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-800">
+                                <span className="block text-xs font-bold text-purple-600 mb-1">STEP 2</span>
+                                <span className="text-sm font-bold text-gray-900 dark:text-white">Run Agents</span>
+                            </div>
+                            <div className="text-gray-300 dark:text-gray-600">→</div>
+                            <div className="px-6 py-3 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-800">
+                                <span className="block text-xs font-bold text-green-600 mb-1">STEP 3</span>
+                                <span className="text-sm font-bold text-gray-900 dark:text-white">Deliver Output</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </>
         </>
     ),
 };

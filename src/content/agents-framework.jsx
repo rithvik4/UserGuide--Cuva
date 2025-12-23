@@ -23,8 +23,8 @@ export default {
                                 </svg>
                             </span>
                         </div>
-                        <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Agents introduction</h4>
-                        <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400 no-underline">Explore definitions, roles, and real-world examples of agents.</p>
+                        <h4 className="text-[17px] font-bold text-gray-900 dark:text-white mb-2">Agents introduction</h4>
+                        <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400 no-underline">Explore definitions, roles, and real-world examples of agents.</p>
                     </div>
                 </a>
 
@@ -38,8 +38,8 @@ export default {
                                 </svg>
                             </span>
                         </div>
-                        <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">How agents work</h4>
-                        <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400 no-underline">Understand the trigger, flow, and action lifecycle phases.</p>
+                        <h4 className="text-[17px] font-bold text-gray-900 dark:text-white mb-2">How agents work</h4>
+                        <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400 no-underline">Understand the trigger, flow, and action lifecycle phases.</p>
                     </div>
                 </a>
             </div>
@@ -57,20 +57,20 @@ export default {
                     </thead>
                     <tbody className="bg-white dark:bg-slate-900/20 divide-y divide-slate-200 dark:divide-slate-800">
                         <tr>
-                            <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">Trigger-Based Execution</td>
-                            <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Programmed to initialize on specific events for real-time response.</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-[16px] font-bold text-gray-900 dark:text-white">Trigger-Based Execution</td>
+                            <td className="px-6 py-4 text-[15px] text-gray-500 dark:text-gray-400">Programmed to initialize on specific events for real-time response.</td>
                         </tr>
                         <tr>
-                            <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">Contextual Synthesis</td>
-                            <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Leverages RAG to gather/analyze internal data for grounded, factual summaries.</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-[16px] font-bold text-gray-900 dark:text-white">Contextual Synthesis</td>
+                            <td className="px-6 py-4 text-[15px] text-gray-500 dark:text-gray-400">Leverages RAG to gather/analyze internal data for grounded, factual summaries.</td>
                         </tr>
                         <tr>
-                            <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">Adaptive Decisioning</td>
-                            <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Agents make next-step decisions based on the outcome of previous actions.</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-[16px] font-bold text-gray-900 dark:text-white">Adaptive Decisioning</td>
+                            <td className="px-6 py-4 text-[15px] text-gray-500 dark:text-gray-400">Agents make next-step decisions based on the outcome of previous actions.</td>
                         </tr>
                         <tr>
-                            <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">Efficiency Scaling</td>
-                            <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Automates high-frequency repetitive tasks, freeing human cognitive resources.</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-[16px] font-bold text-gray-900 dark:text-white">Efficiency Scaling</td>
+                            <td className="px-6 py-4 text-[15px] text-gray-500 dark:text-gray-400">Automates high-frequency repetitive tasks, freeing human cognitive resources.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -79,24 +79,24 @@ export default {
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight">Reference Use Cases for Builders</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
                 <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative group hover:border-blue-500/30 transition-colors">
-                    <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">CRM Intelligence</h4>
-                    <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Automate sales prospect research and generate tailored outreach based on historical data.</p>
+                    <h4 className="text-[17px] font-bold text-gray-900 dark:text-white mb-2">CRM Intelligence</h4>
+                    <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">Automate sales prospect research and generate tailored outreach based on historical data.</p>
                 </div>
                 <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative group hover:border-purple-500/30 transition-colors">
-                    <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Engineering Oversight</h4>
-                    <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Deploy agents to audit PRs, generate code descriptions, and compile self-evaluation documents.</p>
+                    <h4 className="text-[17px] font-bold text-gray-900 dark:text-white mb-2">Engineering Oversight</h4>
+                    <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">Deploy agents to audit PRs, generate code descriptions, and compile self-evaluation documents.</p>
                 </div>
                 <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative group hover:border-green-500/30 transition-colors">
-                    <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Service Resolution</h4>
-                    <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Summarize ongoing ticket activity and proactively suggest next steps for case resolution.</p>
+                    <h4 className="text-[17px] font-bold text-gray-900 dark:text-white mb-2">Service Resolution</h4>
+                    <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">Summarize ongoing ticket activity and proactively suggest next steps for case resolution.</p>
                 </div>
                 <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative group hover:border-orange-500/30 transition-colors">
-                    <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Executive Operations</h4>
-                    <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Synthesize transcripts into actionable recaps, highlighting experts and cross-referencing docs.</p>
+                    <h4 className="text-[17px] font-bold text-gray-900 dark:text-white mb-2">Executive Operations</h4>
+                    <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">Synthesize transcripts into actionable recaps, highlighting experts and cross-referencing docs.</p>
                 </div>
                 <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm md:col-span-2 relative group hover:border-pink-500/30 transition-colors">
-                    <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Sentiment Analysis</h4>
-                    <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Mine knowledge bases, tickets, and Slack channels to generate real-time customer satisfaction scores.</p>
+                    <h4 className="text-[17px] font-bold text-gray-900 dark:text-white mb-2">Sentiment Analysis</h4>
+                    <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">Mine knowledge bases, tickets, and Slack channels to generate real-time customer satisfaction scores.</p>
                 </div>
             </div>
         </>

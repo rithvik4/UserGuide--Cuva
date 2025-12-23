@@ -1,15 +1,15 @@
 import React from "react";
 
-export default function SearchResults({ query = "", docsIndex = [], onSelectDoc = () => {} }) {
+export default function SearchResults({ query = "", docsIndex = [], onSelectDoc = () => { } }) {
   const q = (query || "").trim().toLowerCase();
   const results = q
     ? docsIndex.filter((d) => {
-        return (
-          d.label.toLowerCase().includes(q) ||
-          (d.heading && d.heading.toLowerCase().includes(q)) ||
-          (d.id && d.id.toLowerCase().includes(q))
-        );
-      })
+      return (
+        (d.title && d.title.toLowerCase().includes(q)) ||
+        (d.section && d.section.toLowerCase().includes(q)) ||
+        (d.id && d.id.toLowerCase().includes(q))
+      );
+    })
     : [];
 
   return (
@@ -28,8 +28,8 @@ export default function SearchResults({ query = "", docsIndex = [], onSelectDoc 
                 onClick={() => onSelectDoc(r.id)}
                 className="text-left w-full"
               >
-                <div className="text-lg text-blue-700 font-medium">{r.label}</div>
-                {r.heading ? <div className="text-sm text-gray-600">{r.heading}</div> : null}
+                <div className="text-lg text-blue-700 font-medium">{r.title}</div>
+                {r.section ? <div className="text-sm text-gray-600">In {r.section}</div> : null}
               </button>
             </li>
           ))}

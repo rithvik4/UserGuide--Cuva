@@ -55,6 +55,7 @@ import howAgentsWork from './how-agents-work';
 const docsContent = {
   welcome,
   'platform-overview': platformOverview,
+  'create-ai-agent-workflow': quickstartFirstAgent,
   'quickstart-first-agent': quickstartFirstAgent,
   'architecture-overview': architectureOverview,
   'agent-overview': agentsFramework,
