@@ -2,7 +2,7 @@ import React from 'react';
 import { Icons } from '../lib/icons';
 
 const ProcessingAgents = {
-    heading: "Processing Agents: The Autonomous Brains",
+    heading: "Processing Agents:",
     body: (
         <>
             <p>
