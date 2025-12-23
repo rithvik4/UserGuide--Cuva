@@ -6,5 +6,8 @@ export default defineConfig({
   server: {
     port: 5173,
     open: true,
+    allowedHosts: [
+      "devserver-main--rainbow-mochi-371a77.netlify.app",
+    ],
   },
 });
