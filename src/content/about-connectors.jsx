@@ -4,9 +4,28 @@ export default {
     heading: 'About Connectors',
     body: (
         <>
-            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-10">
-                Connectors are the critical intake valves of the Cuva AI ecosystem. They securely bridge your external enterprise applications with Cuva's Knowledge Graph, enabling agents to perceive, search, and act upon data that resides in siloed systems.
-            </p>
+            <div className="mb-12">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">What is a Connector?</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                    A Connector is a specialized software bridge that links the Cuva AI platform to your external applications and data sources. Think of it as a universal adaptor: whether your data lives in Salesforce, Slack, Google Drive, or a custom internal database, a Connector translates that data into a format Cuva's AI agents can understand and interact with.
+                </p>
+
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Why we use connectors in Cuva AI?</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                    Enterprises run on hundreds of disjointed apps. Without connectors, an AI is blind to this information. We use connectors to:
+                </p>
+                <div className="space-y-3 mb-6">
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <strong className="text-gray-900 dark:text-white">Break Down Silos:</strong> Connectors unify data from scattered systems (like CRM, ERP, and Email) into a single "Digital Brain," giving agents a holistic view of your business.
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <strong className="text-gray-900 dark:text-white">Enable Action:</strong> They don't just read data; they allow agents to "write back." This means an agent can update a Jira ticket or send a Slack message directly, turning insights into real-world tasks.
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <strong className="text-gray-900 dark:text-white">Maintain Security:</strong> Connectors respect existing permissions. They ensure that Cuva AI only accesses and displays information that the specific user is authorized to see in the source system.
+                    </p>
+                </div>
+            </div>
 
             {/* Core Functions Section - Modeled after the "Why it matters" section but Cuva-branded */}
             <div className="space-y-8 mb-16">
@@ -66,7 +85,7 @@ export default {
                         </div>
                         <div>
                             <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Native Connectors</h4>
-                            <p className="text-gray-600 dark:text-gray-400 mb-4 text-[15px]">
+                            <p className="text-gray-600 dark:text-gray-400 mb-4 text-[17px]">
                                 Pre-built, fully managed integrations for popular enterprise SaaS tools. These require zero code to set up—just OAuth authentication.
                             </p>
                             <div className="flex flex-wrap gap-2">
@@ -85,7 +104,7 @@ export default {
                         </div>
                         <div>
                             <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Push API Connectors</h4>
-                            <p className="text-gray-600 dark:text-gray-400 mb-4 text-[15px]">
+                            <p className="text-gray-600 dark:text-gray-400 mb-4 text-[17px]">
                                 For internal tools or proprietary databases where a native connector doesn't exist. You can push JSON data directly into Cuva's index using our secure REST API.
                             </p>
                             <div className="flex gap-2">
@@ -100,7 +119,7 @@ export default {
                         </div>
                         <div>
                             <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Web Crawlers</h4>
-                            <p className="text-gray-600 dark:text-gray-400 mb-4 text-[15px]">
+                            <p className="text-gray-600 dark:text-gray-400 mb-4 text-[17px]">
                                 Configurable crawlers to index public documentation, support sites, or internal intranets that are accessible via HTTP but lack an API.
                             </p>
                             <div className="flex flex-wrap gap-2">

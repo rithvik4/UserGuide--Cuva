@@ -29,7 +29,7 @@ export default {
             Find answers to common questions about the Cuva AI platform, from initial setup to advanced enterprise orchestration.
           </p>
 
-          <p className="mt-8 text-[15px] font-bold text-gray-900 dark:text-white">Can't find what you are looking for?</p>
+          <p className="mt-8 text-[17px] font-bold text-gray-900 dark:text-white">Can't find what you are looking for?</p>
           <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">We would like to chat with you.</p>
 
           <div className="mt-8 flex items-center gap-6 p-6 bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900/20 rounded-2xl">
@@ -50,39 +50,39 @@ export default {
           <div className="mb-6">
             <div className="flex items-center border dark:border-slate-800 rounded-xl px-4 py-3 bg-white dark:bg-slate-900 shadow-sm focus-within:ring-2 focus-within:ring-blue-500/20 transition-all">
               <svg className="w-5 h-5 text-gray-400 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-              <input className="flex-1 outline-none bg-transparent text-[15px]" placeholder="Search FAQs..." />
+              <input className="flex-1 outline-none bg-transparent text-[17px]" placeholder="Search FAQs..." />
             </div>
           </div>
 
           <div className="space-y-4">
             {questions.map((item, idx) => (
               <details key={idx} className="border dark:border-slate-800 rounded-xl p-5 bg-white dark:bg-slate-900/50 hover:border-blue-500/30 transition-colors group">
-                <summary className="cursor-pointer list-none font-bold text-gray-900 dark:text-white flex justify-between items-center text-[15px]">
+                <summary className="cursor-pointer list-none font-bold text-gray-900 dark:text-white flex justify-between items-center text-[17px]">
                   {item.q}
                   <span className="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
                 </summary>
-                <div className="mt-4 text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed border-t dark:border-slate-800 pt-4">
+                <div className="mt-4 text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed border-t dark:border-slate-800 pt-4">
                   {item.a}
                 </div>
               </details>
             ))}
 
             <details className="border dark:border-slate-800 rounded-xl p-5 bg-white dark:bg-slate-900/50 hover:border-blue-500/30 transition-colors group">
-              <summary className="cursor-pointer list-none font-bold text-gray-900 dark:text-white flex justify-between items-center text-[15px]">
+              <summary className="cursor-pointer list-none font-bold text-gray-900 dark:text-white flex justify-between items-center text-[17px]">
                 Do I need design skills to create agents?
                 <span className="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
               </summary>
-              <div className="mt-4 text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed border-t dark:border-slate-800 pt-4">
+              <div className="mt-4 text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed border-t dark:border-slate-800 pt-4">
                 No — the Agent Studio provides templates and drag-and-drop tooling. Designers can add branded prompts and messages as needed.
               </div>
             </details>
 
             <details className="border dark:border-slate-800 rounded-xl p-5 bg-white dark:bg-slate-900/50 hover:border-blue-500/30 transition-colors group">
-              <summary className="cursor-pointer list-none font-bold text-gray-900 dark:text-white flex justify-between items-center text-[15px]">
+              <summary className="cursor-pointer list-none font-bold text-gray-900 dark:text-white flex justify-between items-center text-[17px]">
                 Why should I choose Cuva over similar tools?
                 <span className="text-gray-400 group-open:rotate-180 transition-transform">↓</span>
               </summary>
-              <div className="mt-4 text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed border-t dark:border-slate-800 pt-4">
+              <div className="mt-4 text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed border-t dark:border-slate-800 pt-4">
                 Cuva focuses on production-grade agent orchestration, connector templates, and observability to help teams run AI at scale.
               </div>
             </details>

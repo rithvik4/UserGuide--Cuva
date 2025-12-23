@@ -15,15 +15,15 @@ export default {
       <div className="space-y-6 mb-12">
         <div>
           <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1">Architects (Builders)</h4>
-          <p className="text-[14px] leading-relaxed text-gray-700 dark:text-gray-300">Power users and IT specialists who define logic, connect data sources, and build custom AI experiences to solve bottlenecks.</p>
+          <p className="text-[16px] leading-relaxed text-gray-700 dark:text-gray-300">Power users and IT specialists who define logic, connect data sources, and build custom AI experiences to solve bottlenecks.</p>
         </div>
         <div>
           <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1">End-Users (Consumers)</h4>
-          <p className="text-[14px] leading-relaxed text-gray-700 dark:text-gray-300">The broader workforce interacting with pre-configured agents to accelerate daily output via predefined tasks and automations.</p>
+          <p className="text-[16px] leading-relaxed text-gray-700 dark:text-gray-300">The broader workforce interacting with pre-configured agents to accelerate daily output via predefined tasks and automations.</p>
         </div>
         <div>
           <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1">Supervisors (Admins)</h4>
-          <p className="text-[14px] leading-relaxed text-gray-700 dark:text-gray-300">Strategic oversight tier managing security governance, permissioning, and monitoring the ROI of automated workflows.</p>
+          <p className="text-[16px] leading-relaxed text-gray-700 dark:text-gray-300">Strategic oversight tier managing security governance, permissioning, and monitoring the ROI of automated workflows.</p>
         </div>
       </div>
       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Core Characteristics</h3>

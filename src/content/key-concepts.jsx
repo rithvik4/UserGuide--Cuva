@@ -27,19 +27,19 @@ export default {
       <ul className="space-y-4 my-6">
         <li className="flex items-start gap-3">
           <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+          <div className="text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed">
             <strong className="text-gray-900 dark:text-white">Autonomous Decision-Making:</strong> Agents analyze context—such as buyer-supplier relationships—to determine the best next action.
           </div>
         </li>
         <li className="flex items-start gap-3">
           <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+          <div className="text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed">
             <strong className="text-gray-900 dark:text-white">Multi-Agent Collaboration:</strong> Specialized agents (KYC, Risk, etc.) work together, passing data between nodes to complete high-level objectives.
           </div>
         </li>
         <li className="flex items-start gap-3">
           <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+          <div className="text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed">
             <strong className="text-gray-900 dark:text-white">Reasoning and Adaptability:</strong> The workflow branches and iterates based on results, solving open-ended tasks that rigid scripts cannot handle.
           </div>
         </li>
@@ -65,19 +65,19 @@ export default {
       <ul className="space-y-4 my-6">
         <li className="flex items-start gap-3">
           <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+          <div className="text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed">
             <strong className="text-gray-900 dark:text-white">Extract:</strong> Retrieve data from diverse sources like databases, documents, and emails.
           </div>
         </li>
         <li className="flex items-start gap-3">
           <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+          <div className="text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed">
             <strong className="text-gray-900 dark:text-white">Transform:</strong> Normalize and vectorize content for efficient reasoning by other agents.
           </div>
         </li>
         <li className="flex items-start gap-3">
           <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+          <div className="text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed">
             <strong className="text-gray-900 dark:text-white">Load:</strong> Populate the "Digital Brain" to ensure it remains current in real-time.
           </div>
         </li>
@@ -88,27 +88,31 @@ export default {
         Retrieval-Augmented Generation (RAG) acts as a bridge, connecting the AI's reasoning engine with your organization's verified institutional knowledge.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-        <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-4">1. Retrieval</h4>
-          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Locates the most relevant pieces of information from your organization's repository using vector similarity search.</p>
-        </div>
-        <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-4">2. Augmentation</h4>
-          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Injects the retrieved facts into the AI's instruction set, providing a factual foundation for the response.</p>
-        </div>
-        <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-4">3. Generation</h4>
-          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Synthesizes the answer using both the user query and the factual context to prevent hallucinations.</p>
-        </div>
-      </div>
+      <ul className="space-y-4 my-6">
+        <li className="flex items-start gap-3">
+          <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+          <div className="text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed">
+            <strong className="text-gray-900 dark:text-white">Retrieval:</strong> Locates the most relevant pieces of information from your organization's repository using vector similarity search.
+          </div>
+        </li>
+        <li className="flex items-start gap-3">
+          <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+          <div className="text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed">
+            <strong className="text-gray-900 dark:text-white">Augmentation:</strong> Injects the retrieved facts into the AI's instruction set, providing a factual foundation for the response.
+          </div>
+        </li>
+        <li className="flex items-start gap-3">
+          <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+          <div className="text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed">
+            <strong className="text-gray-900 dark:text-white">Generation:</strong> Synthesizes the answer using both the user query and the factual context to prevent hallucinations.
+          </div>
+        </li>
+      </ul>
 
-      <div className="bg-gradient-to-br from-slate-50 to-indigo-50 dark:from-slate-900/50 dark:to-indigo-900/10 p-6 rounded-3xl border border-indigo-100/50 dark:border-indigo-900/20 shadow-sm mb-8">
-        <h4 className="text-[17px] font-bold text-gray-900 dark:text-white mb-3 tracking-tight">Knowledge Bases (KBs)</h4>
-        <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-400">
-          The curated repository of domain-specific intelligence. A Knowledge Base serves as the long-term memory for the AI, storing verified facts and specifications in an optimized format for instant search.
-        </p>
-      </div>
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-10 mb-3 tracking-tight">Knowledge Bases (KBs)</h3>
+      <p>
+        The curated repository of domain-specific intelligence. A Knowledge Base serves as the long-term memory for the AI, storing verified facts and specifications in an optimized format for instant search.
+      </p>
 
       {/* Connectors */}
       <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4">Connectors</h2>
@@ -118,13 +122,13 @@ export default {
       <ul className="space-y-4 my-6">
         <li className="flex items-start gap-3">
           <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+          <div className="text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed">
             <strong className="text-gray-900 dark:text-white">Tailor-Made Integration:</strong> Purpose-built for specific apps (e.g., Salesforce, SharePoint) to ensure optimized data exchange.
           </div>
         </li>
         <li className="flex items-start gap-3">
           <div className="mt-1.5 w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-          <div className="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">
+          <div className="text-[16px] text-gray-600 dark:text-gray-400 leading-relaxed">
             <strong className="text-gray-900 dark:text-white">Permission-Aware:</strong> Respect organization-level security protocols, ensuring authorized data access only.
           </div>
         </li>
@@ -133,20 +137,20 @@ export default {
       <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-8 mb-4 tracking-tight">How We Use Connectors</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
         <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative group hover:border-blue-500/30 transition-colors">
-          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Agentic ETL</h4>
-          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Agents "crawl" enterprise sources to extract, clean, and load data into your Knowledge Base.</p>
+          <h4 className="text-[17px] font-bold text-gray-900 dark:text-white mb-2">Agentic ETL</h4>
+          <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">Agents "crawl" enterprise sources to extract, clean, and load data into your Knowledge Base.</p>
         </div>
         <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative group hover:border-purple-500/30 transition-colors">
-          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Visual Workflow Nodes</h4>
-          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Drag-and-drop nodes in the AI agent studio to trigger flows (e.g., on new email) or execute actions.</p>
+          <h4 className="text-[17px] font-bold text-gray-900 dark:text-white mb-2">Visual Workflow Nodes</h4>
+          <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">Drag-and-drop nodes in the AI agent studio to trigger flows (e.g., on new email) or execute actions.</p>
         </div>
         <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative group hover:border-green-500/30 transition-colors">
-          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Real-Time Retrieval</h4>
-          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Fetch live data from connected systems to ensure agentic responses are grounded in current facts.</p>
+          <h4 className="text-[17px] font-bold text-gray-900 dark:text-white mb-2">Real-Time Retrieval</h4>
+          <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">Fetch live data from connected systems to ensure agentic responses are grounded in current facts.</p>
         </div>
         <div className="p-6 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative group hover:border-orange-500/30 transition-colors">
-          <h4 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2">Task Execution</h4>
-          <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Agents move beyond chat to active work, like processing an invoice directly in the source system.</p>
+          <h4 className="text-[17px] font-bold text-gray-900 dark:text-white mb-2">Task Execution</h4>
+          <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">Agents move beyond chat to active work, like processing an invoice directly in the source system.</p>
         </div>
       </div>
 
@@ -161,24 +165,24 @@ export default {
           </thead>
           <tbody className="bg-white dark:bg-slate-900/20 divide-y divide-slate-200 dark:divide-slate-800">
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">CRM</td>
-              <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Salesforce, HubSpot, Pipedrive</td>
+              <td className="px-6 py-4 whitespace-nowrap text-[16px] font-bold text-gray-900 dark:text-white">CRM</td>
+              <td className="px-6 py-4 text-[15px] text-gray-500 dark:text-gray-400">Salesforce, HubSpot, Pipedrive</td>
             </tr>
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">Collaboration</td>
-              <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Slack, Microsoft Teams, Asana</td>
+              <td className="px-6 py-4 whitespace-nowrap text-[16px] font-bold text-gray-900 dark:text-white">Collaboration</td>
+              <td className="px-6 py-4 text-[15px] text-gray-500 dark:text-gray-400">Slack, Microsoft Teams, Asana</td>
             </tr>
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">Productivity</td>
-              <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Microsoft Word, Excel, PowerPoint, Google Sheets</td>
+              <td className="px-6 py-4 whitespace-nowrap text-[16px] font-bold text-gray-900 dark:text-white">Productivity</td>
+              <td className="px-6 py-4 text-[15px] text-gray-500 dark:text-gray-400">Microsoft Word, Excel, PowerPoint, Google Sheets</td>
             </tr>
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">File Storage</td>
-              <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">OneDrive, Google Drive, SharePoint, Dropbox, FTP</td>
+              <td className="px-6 py-4 whitespace-nowrap text-[16px] font-bold text-gray-900 dark:text-white">File Storage</td>
+              <td className="px-6 py-4 text-[15px] text-gray-500 dark:text-gray-400">OneDrive, Google Drive, SharePoint, Dropbox, FTP</td>
             </tr>
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">Finance</td>
-              <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">PayPal, Stripe, Plaid, WealthBox, LexisNexis, Mambu</td>
+              <td className="px-6 py-4 whitespace-nowrap text-[16px] font-bold text-gray-900 dark:text-white">Finance</td>
+              <td className="px-6 py-4 text-[15px] text-gray-500 dark:text-gray-400">PayPal, Stripe, Plaid, WealthBox, LexisNexis, Mambu</td>
             </tr>
           </tbody>
         </table>

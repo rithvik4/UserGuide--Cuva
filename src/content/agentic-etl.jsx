@@ -4,11 +4,27 @@ const AgenticETL = {
     heading: "Agentic ETL: Resilient Pipelines",
     body: (
         <>
-            <div className="bg-orange-50/50 dark:bg-orange-950/20 border-l-4 border-orange-500 p-8 my-10 rounded-r-3xl">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 tracking-tight">The End of Rigid Pipelines</h3>
-                <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-400">
-                    Standard ETL scripts are brittle. If a column name changes or a PDF layout shifts, traditional scripts fail. <strong>Cuva uses Agentic ETL because business data is messy.</strong> Our agents use computer vision and reasoning to "read" data like a human employee, making your pipelines resilient to change.
+            <div className="mb-12">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">What is Agentic ETL?</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                    Agentic ETL (Extract, Transform, Load) is the next evolution of data processing. Traditional ETL relies on rigid, hard-coded scripts that break whenever a source format changes—like a new column in a spreadsheet or a shifted layout in a PDF. <strong className="text-gray-900 dark:text-white">Agentic ETL replaces these brittle scripts with AI Agents.</strong> These agents use computer vision and semantic reasoning to "read" and understand data just like a human would, allowing them to adapt to changes automatically without crashing.
                 </p>
+
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">How we use it in Cuva?</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                    In the Cuva Platform, we use Agentic ETL to handle the "messy" reality of enterprise data. Instead of forcing you to clean your data before uploading it, our agents do the heavy lifting for you.
+                </p>
+                <div className="space-y-3 mb-6">
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <strong className="text-gray-900 dark:text-white">Resilient Extraction:</strong> Whether it's a scanned invoice, a complex legal contract, or a messy Excel file, our agents intelligently identify and extract the key information you need, ignoring the noise.
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <strong className="text-gray-900 dark:text-white">Contextual Transformation:</strong> The agents understand context. For example, they know that "Bill to" and "Invoiced to" mean the same thing, standardizing your data automatically without manual mapping rules.
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <strong className="text-gray-900 dark:text-white">Knowledge Graph & Vector Integration:</strong> Once processed, the agent converts the extracted data into numerical vectors (embeddings) and loads them into a secure <strong className="text-gray-900 dark:text-white">Vector Database</strong> for precise retrieval. Simultaneously, it maps relationships in the <strong className="text-gray-900 dark:text-white">Knowledge Graph</strong>, ensuring both semantic understanding and structural context.
+                    </p>
+                </div>
             </div>
 
             <h3 className="text-[17px] font-bold text-gray-900 dark:text-white mb-8 tracking-tight">From Brittle Scripts to Resilient Agents</h3>
@@ -20,7 +36,7 @@ const AgenticETL = {
                     </div>
                     <div>
                         <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1">Intelligent Extraction</h4>
-                        <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">
+                        <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">
                             Cuva agents use Vision Models to recognize tables in scanned invoices or identify clauses in legal contracts, extracting data with human-like context.
                         </p>
                     </div>
@@ -32,7 +48,7 @@ const AgenticETL = {
                     </div>
                     <div>
                         <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1">Semantic Transformation</h4>
-                        <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">
+                        <p className="text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">
                             Instead of brittle regex patterns, agents use logic to understand that different formats or names refer to the same entity, performing deduplication automatically.
                         </p>
                     </div>
@@ -44,8 +60,8 @@ const AgenticETL = {
                     </div>
                     <div>
                         <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1">Adaptive Loading</h4>
-                        <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">
-                            Data is loaded into the <strong>Knowledge Graph</strong>, linking new information to existing entities, ensuring your internal data remains interconnected.
+                        <p className="text-gray-600 dark:text-gray-400 text-[15px] leading-relaxed">
+                            Data is converted into numerical vectors and stored in the <strong>Vector Database</strong> for accurate retrieval, while simultaneously updating the <strong>Knowledge Graph</strong> to maintain entity relationships.
                         </p>
                     </div>
                 </div>

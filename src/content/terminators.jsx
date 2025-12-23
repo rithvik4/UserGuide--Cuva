@@ -5,70 +5,120 @@ const Terminators = {
     heading: "Terminators: Closing the Loop",
     body: (
         <>
-            <p>
-                <strong>Terminators</strong> are the final nodes in a workflow canvas. They define what happens when an agent completes its task, ensuring the process is closed, the data is delivered, and the goal is achieved. Without a terminator, a workflow has no "final output."
+            <p className="mb-8 text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                In a Cuva AI agentic workflow, the <strong>Terminator</strong> serves as the definitive exit point of your automation. It is the final "stop" on the visual canvas that signals the successful completion of a task and determines what information is returned to the user or system.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
-                <div className="flex bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden group">
-                    <div className="absolute top-0 right-0 w-1 bg-red-500 h-full"></div>
-                    <div className="mr-6">
-                        <div className="w-12 h-12 bg-red-500/10 text-red-600 dark:text-red-400 rounded-xl flex items-center justify-center mb-4">
-                            <Icons.Shield className="w-6 h-6" />
-                        </div>
-                        <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-2 tracking-tight">Final Output</h4>
-                        <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Specifies what value or file should be returned as the final result of the execution.</p>
-                    </div>
+            <div className="space-y-12">
+                {/* What is a Terminator? */}
+                <div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">What is a Terminator?</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        The Terminator is a specialized node that closes the loop of an agent's logic. While triggers start the engine, terminators shut it down gracefully by packaging the final results of all preceding steps (AI reasoning, data lookups, or tool executions) into a structured format.
+                    </p>
                 </div>
 
-                <div className="flex bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden group">
-                    <div className="absolute top-0 right-0 w-1 bg-blue-500 h-full"></div>
-                    <div className="mr-6">
-                        <div className="w-12 h-12 bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center mb-4">
-                            <Icons.Connectors className="w-6 h-6" />
-                        </div>
-                        <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-2 tracking-tight">System Update</h4>
-                        <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">Syncs the final data back to your CRM, Data Warehouse, or other enterprise systems.</p>
+                {/* Why We Use Terminators */}
+                <div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Why We Use Terminators</h3>
+                    <ul className="space-y-6">
+                        <li className="flex gap-4">
+                            <div className="mt-1.5 min-w-[6px] h-1.5 w-1.5 rounded-full bg-red-500"></div>
+                            <div>
+                                <strong className="block text-gray-900 dark:text-white mb-1">Defining Success</strong>
+                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    It marks the end of a specific logical branch, ensuring the agent doesn't continue running in an infinite loop.
+                                </p>
+                            </div>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="mt-1.5 min-w-[6px] h-1.5 w-1.5 rounded-full bg-red-500"></div>
+                            <div>
+                                <strong className="block text-gray-900 dark:text-white mb-1">Data Structuring</strong>
+                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    It allows developers to define a <strong>Response Schema</strong>, ensuring that the output is clean and ready for consumption by other apps or human users.
+                                </p>
+                            </div>
+                        </li>
+                        <li className="flex gap-4">
+                            <div className="mt-1.5 min-w-[6px] h-1.5 w-1.5 rounded-full bg-red-500"></div>
+                            <div>
+                                <strong className="block text-gray-900 dark:text-white mb-1">Multi-Path Completion</strong>
+                                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    In workflows with complex branching (If/Else logic), you may have multiple Terminators—one for each possible outcome (e.g., an "Approval" path and a "Rejection" path).
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {/* How to Use the Terminator in Cuva */}
+            <div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">How to Use the Terminator in Cuva</h3>
+
+                <div className="space-y-8 pl-4 border-l-2 border-slate-200 dark:border-slate-800">
+                    {/* Step 1 */}
+                    <div>
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-md">1. Adding the Node</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">To add a Terminator to your canvas:</p>
+                        <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400 list-disc pl-5">
+                            <li>Click the <strong>Plus (+) icon</strong> on the connection line extending from your last action node.</li>
+                            <li>In the Select Category sidebar, navigate to the bottom and select the <strong>Terminator</strong> category.</li>
+                            <li>Click on the Terminator node to place it on the canvas.</li>
+                        </ul>
+                    </div>
+
+                    {/* Step 2 */}
+                    <div>
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-md">2. Configuring the Exit Logic</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">When you click on the Terminator node, a configuration panel appears on the right:</p>
+                        <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400 list-disc pl-5">
+                            <li><strong>Final Instructions:</strong> In the "Ends the workflow here" text field, you can provide a description of what this specific termination point represents (e.g., "Analyze and validate the latest records by interval").</li>
+                            <li><strong>Output Summary:</strong> Use this area to describe the final state of the data being returned.</li>
+                        </ul>
+                    </div>
+
+                    {/* Step 3 */}
+                    <div>
+                        <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-md">3. Data Field Mapping</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">The Terminator acts as the final "bucket" for your data. You must map the variables you want to deliver to the end-user:</p>
+                        <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400 list-disc pl-5">
+                            <li><strong>Linking Results:</strong> Map the output from previous nodes (like an AI Agent's summary or a Database lookup) into the Terminator.</li>
+                            <li><strong>Validation Check:</strong> If you see "Not valid for field mapping," it means the Terminator has not yet been correctly linked to a data source from a preceding node. Ensure there is a solid connection line (edge) leading into the Terminator from a node that produces output.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">Common Terminator Types</h3>
-            <div className="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
-                <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-800">
-                    <thead className="bg-slate-50 dark:bg-slate-900/50">
-                        <tr>
-                            <th className="px-6 py-4 text-left text-[11px] font-bold text-slate-500 uppercase tracking-widest">Node Type</th>
-                            <th className="px-6 py-4 text-left text-[11px] font-bold text-slate-500 uppercase tracking-widest">Function</th>
-                        </tr>
-                    </thead>
-                    <tbody className="bg-white dark:bg-slate-900/20 divide-y divide-slate-200 dark:divide-slate-800">
-                        <tr>
-                            <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">Notification</td>
-                            <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Sends status reports via Slack, Teams, or Email.</td>
-                        </tr>
-                        <tr>
-                            <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">API Callback</td>
-                            <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Sends payload back to a URL for 3rd-party consumption.</td>
-                        </tr>
-                        <tr>
-                            <td className="px-6 py-4 whitespace-nowrap text-[14px] font-bold text-gray-900 dark:text-white">Data Store Push</td>
-                            <td className="px-6 py-4 text-[13px] text-gray-500 dark:text-gray-400">Updates existing records in your knowledge base.</td>
-                        </tr>
-                    </tbody>
-                </table>
+            {/* Best Practices */}
+            <div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Best Practices for Clean Workflows</h3>
+                <ul className="space-y-5">
+                    <li className="flex gap-4">
+                        <div className="mt-1.5 min-w-[6px] h-1.5 w-1.5 rounded-full bg-purple-500"></div>
+                        <div>
+                            <strong className="block text-gray-900 dark:text-white mb-1 text-sm">Explicit Labeling</strong>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">If your workflow has multiple exit points, use the instruction field in each Terminator to clearly label the outcome (e.g., "Path: Success" vs "Path: Error").</p>
+                        </div>
+                    </li>
+                    <li className="flex gap-4">
+                        <div className="mt-1.5 min-w-[6px] h-1.5 w-1.5 rounded-full bg-purple-500"></div>
+                        <div>
+                            <strong className="block text-gray-900 dark:text-white mb-1 text-sm">Terminate After Every Branch</strong>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Ensure that no logical path is left "hanging." Every branch created by a Filter node must eventually lead to a Terminator.</p>
+                        </div>
+                    </li>
+                    <li className="flex gap-4">
+                        <div className="mt-1.5 min-w-[6px] h-1.5 w-1.5 rounded-full bg-purple-500"></div>
+                        <div>
+                            <strong className="block text-gray-900 dark:text-white mb-1 text-sm">Review Before Deployment</strong>
+                            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Use the Preview tool to ensure the Terminator is returning the expected data payload before you click "Publish."</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
 
-            <div className="mt-12 p-8 bg-slate-900 dark:bg-slate-900/80 text-white rounded-3xl border border-slate-800 shadow-xl overflow-hidden relative">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 to-orange-500"></div>
-                <h4 className="flex items-center gap-3 text-[17px] font-bold mb-4 tracking-tight">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-yellow-500/20 text-yellow-500 text-sm">💡</span>
-                    Best Practice
-                </h4>
-                <p className="text-slate-400 text-[14px] leading-relaxed">
-                    Always include an <strong>Audit Terminator</strong> in sensitive workflows. This node generates a summary of every action the agent took and why, ensuring that your AI operations are fully transparent and ready for regulatory review.
-                </p>
-            </div>
         </>
     ),
 };
