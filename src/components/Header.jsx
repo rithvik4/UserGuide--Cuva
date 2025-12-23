@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.jpeg";
 
-export default function Header({ docsIndex = [], onSelectDoc = () => {}, onSearch = () => {} }) {
+export default function Header({ docsIndex = [], onSelectDoc = () => { }, onSearch = () => { } }) {
   const [query, setQuery] = useState("");
   const [isDark, setIsDark] = useState(() => {
     if (typeof window === "undefined") return false;
@@ -9,7 +9,7 @@ export default function Header({ docsIndex = [], onSelectDoc = () => {}, onSearc
       const stored = localStorage.getItem("theme");
       if (stored === "dark") return true;
       if (stored === "light") return false;
-    } catch (e) {}
+    } catch (e) { }
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
   const [showDropdown, setShowDropdown] = useState(false);
@@ -28,7 +28,7 @@ export default function Header({ docsIndex = [], onSelectDoc = () => {}, onSearc
     else document.documentElement.classList.remove("dark");
     try {
       localStorage.setItem("theme", isDark ? "dark" : "light");
-    } catch (e) {}
+    } catch (e) { }
   }, [isDark]);
 
   return (
@@ -75,8 +75,8 @@ export default function Header({ docsIndex = [], onSelectDoc = () => {}, onSearc
                     .filter((d) => {
                       const q = query.trim().toLowerCase();
                       return (
-                        d.label.toLowerCase().includes(q) ||
-                        (d.heading && d.heading.toLowerCase().includes(q)) ||
+                        (d.title && d.title.toLowerCase().includes(q)) ||
+                        (d.section && d.section.toLowerCase().includes(q)) ||
                         (d.id && d.id.toLowerCase().includes(q))
                       );
                     })
@@ -91,11 +91,11 @@ export default function Header({ docsIndex = [], onSelectDoc = () => {}, onSearc
                         }}
                         className="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                       >
-                        <div className="text-sm font-medium text-gray-900 dark:text-gray-100">{d.label}</div>
-                        {d.heading ? <div className="text-xs text-gray-500 dark:text-gray-400">{d.heading}</div> : null}
+                        <div className="text-sm font-medium text-gray-900 dark:text-gray-100">{d.title}</div>
+                        {d.section ? <div className="text-xs text-gray-500 dark:text-gray-400">In {d.section}</div> : null}
                       </button>
-                    )) )}
-                  {docsIndex.filter(d=>d.label.toLowerCase().includes(query.trim().toLowerCase())).length===0 && (
+                    )))}
+                  {docsIndex.filter(d => (d.title && d.title.toLowerCase().includes(query.trim().toLowerCase()))).length === 0 && (
                     <div className="px-4 py-2 text-sm text-gray-500">No results</div>
                   )}
                 </div>
